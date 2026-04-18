@@ -1,0 +1,11 @@
+BranchID,BranchCode,BranchName,Address,City,Phone,OpenDate,Status
+1,BR001,Chi nhánh Hà Nội,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Hà Nội,260227680,2015-01-31,Active
+2,BR002,Chi nhánh Hồ Chí Minh,"45 Nguyễn Huệ, Quận 1, TP.HCM",Hồ Chí Minh,240250165,2015-03-02,Active
+3,BR003,Chi nhánh Đà Nẵng,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Đà Nẵng,225808631,2015-04-01,Active
+4,BR004,Chi nhánh Hải Phòng,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Hải Phòng,293008687,2015-05-01,Active
+5,BR005,Chi nhánh Cần Thơ,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Cần Thơ,259358685,2015-05-31,Active
+6,BR006,Chi nhánh Nghệ An,"88 Lê Lợi, Vinh, Nghệ An",Nghệ An,270220212,2015-06-30,Active
+7,BR007,Chi nhánh Huế,"9 Hùng Vương, Huế",Huế,263322966,2015-07-30,Active
+8,BR008,Chi nhánh Quảng Ninh,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Quảng Ninh,217139656,2015-08-29,Active
+9,BR009,Chi nhánh Khánh Hòa,"77 Trần Phú, Nha Trang, Khánh Hòa",Khánh Hòa,287203229,2015-09-28,Active
+10,BR010,Chi nhánh Bình Dương,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bình Dương,283639422,2015-10-28,Active

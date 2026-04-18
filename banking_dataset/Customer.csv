@@ -1,0 +1,601 @@
+CustomerID,CustomerCode,FullName,Gender,DateOfBirth,NationalID,Phone,Email,Address,Occupation,CustomerType,CreatedDate,Status
+1,CUS00001,Ngô Quốc Sơn,Male,2003-05-26,620000000001,334939761,ng.quc.sn.10001@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Business,2025-08-17,Active
+2,CUS00002,Huỳnh Thị Long,Female,1965-09-09,280000000002,889072630,hunh.th.long.10002@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2026-03-28,Active
+3,CUS00003,Phan Gia Phúc,Male,1975-07-14,900000000003,797406846,phan.gia.phc.10003@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2024-02-25,Active
+4,CUS00004,Hoàng Gia Khánh,Male,1988-10-29,620000000004,961163645,hong.gia.khnh.10004@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2024-08-14,Active
+5,CUS00005,Vũ Anh Quân,Female,1995-05-25,790000000005,509929643,v.anh.qun.10005@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Bác sĩ,Individual,2025-12-23,Active
+6,CUS00006,Phạm Thanh Ngân,Female,1965-12-26,940000000006,825670649,phm.thanh.ngn.10006@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2025-04-04,Active
+7,CUS00007,Đặng Gia Hạnh,Male,1993-03-08,220000000007,334570271,ng.gia.hnh.10007@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Nhân viên văn phòng,Individual,2025-01-24,Active
+8,CUS00008,Võ Ngọc Hiếu,Female,2001-03-06,470000000008,784072663,v.ngc.hiu.10008@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Giáo viên,Business,2025-02-03,Active
+9,CUS00009,Nguyễn Anh Nga,Female,1995-03-08,960000000009,758912085,nguyn.anh.nga.10009@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kinh doanh,Business,2025-12-07,Active
+10,CUS00010,Ngô Đức Sơn,Male,1971-04-10,150000000010,334081467,ng.c.sn.10010@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2025-09-26,Active
+11,CUS00011,Lê Thanh Phúc,Female,1977-07-20,140000000011,724239396,l.thanh.phc.10011@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2026-01-30,Active
+12,CUS00012,Trần Đức Châu,Male,2000-04-17,520000000012,597285582,trn.c.chu.10012@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Nhân viên văn phòng,Individual,2024-02-03,Active
+13,CUS00013,Nguyễn Anh Giang,Male,1969-12-07,940000000013,313750214,nguyn.anh.giang.10013@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2025-01-24,Active
+14,CUS00014,Vũ Gia Nam,Female,1987-08-08,380000000014,907854904,v.gia.nam.10014@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2024-06-18,Active
+15,CUS00015,Vũ Kim Long,Female,1992-04-15,280000000015,316573525,v.kim.long.10015@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2024-05-05,Active
+16,CUS00016,Trần Hữu Phúc,Female,1985-04-04,390000000016,834404631,trn.hu.phc.10016@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Individual,2024-11-30,Active
+17,CUS00017,Trần Thanh Dũng,Male,1991-04-23,810000000017,931367879,trn.thanh.dng.10017@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2024-07-21,Active
+18,CUS00018,Võ Quốc Giang,Male,1980-09-15,810000000018,712245766,v.quc.giang.10018@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2024-12-14,Active
+19,CUS00019,Ngô Kim Hiếu,Female,1996-07-10,490000000019,731160790,ng.kim.hiu.10019@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2024-10-07,Active
+20,CUS00020,Huỳnh Minh Khánh,Male,2004-08-16,160000000020,516626442,hunh.minh.khnh.10020@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2025-05-18,Active
+21,CUS00021,Hoàng Hữu Quân,Female,1967-01-15,380000000021,890297721,hong.hu.qun.10021@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2026-01-25,Active
+22,CUS00022,Lê Thanh Nga,Female,1968-03-26,600000000022,344034462,l.thanh.nga.10022@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Business,2026-02-16,Active
+23,CUS00023,Lê Xuân Long,Female,2002-11-19,230000000023,544087270,l.xun.long.10023@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2024-05-16,Active
+24,CUS00024,Dương Gia Khánh,Male,1971-07-28,420000000024,511709645,dng.gia.khnh.10024@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Công chức,Individual,2025-01-02,Active
+25,CUS00025,Bùi Hữu Phong,Male,1984-09-23,180000000025,843205340,bi.hu.phong.10025@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2025-05-06,Active
+26,CUS00026,Đặng Xuân Nam,Male,1985-03-05,830000000026,534101837,ng.xun.nam.10026@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Business,2025-12-19,Active
+27,CUS00027,Vũ Đức Nam,Female,1981-09-22,460000000027,843576006,v.c.nam.10027@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2024-09-03,Active
+28,CUS00028,Dương Xuân Giang,Male,1980-09-10,490000000028,817056317,dng.xun.giang.10028@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2024-05-06,Active
+29,CUS00029,Võ Gia An,Male,1974-08-11,530000000029,819127557,v.gia.an.10029@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Sinh viên,Individual,2025-04-24,Active
+30,CUS00030,Lê Xuân Lâm,Male,2002-04-17,980000000030,981446242,l.xun.lm.10030@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Công chức,Individual,2024-09-09,Active
+31,CUS00031,Hoàng Đức Yến,Female,1985-09-17,460000000031,854116804,hong.c.yn.10031@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Individual,2025-07-25,Active
+32,CUS00032,Đỗ Ngọc Dũng,Male,1977-03-28,670000000032,914924300,.ngc.dng.10032@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-05-10,Active
+33,CUS00033,Huỳnh Quốc An,Female,2000-07-01,280000000033,509487469,hunh.quc.an.10033@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Sinh viên,Individual,2024-06-02,Active
+34,CUS00034,Võ Kim Phong,Male,1999-10-26,460000000034,530474195,v.kim.phong.10034@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Sinh viên,Individual,2025-10-19,Active
+35,CUS00035,Phạm Kim Giang,Male,1992-07-31,550000000035,551653957,phm.kim.giang.10035@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Individual,2025-10-28,Active
+36,CUS00036,Nguyễn Hữu Lâm,Male,1981-01-07,180000000036,726157133,nguyn.hu.lm.10036@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2025-01-29,Active
+37,CUS00037,Vũ Kim Mai,Male,1997-02-13,680000000037,320109595,v.kim.mai.10037@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Individual,2024-07-28,Active
+38,CUS00038,Phạm Anh Khánh,Female,1970-08-02,570000000038,887839449,phm.anh.khnh.10038@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2025-05-30,Active
+39,CUS00039,Phan Thị Linh,Female,1979-05-30,230000000039,332471447,phan.th.linh.10039@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2024-10-07,Active
+40,CUS00040,Hoàng Hữu Vy,Female,1981-04-19,750000000040,591670073,hong.hu.vy.10040@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Bác sĩ,Individual,2024-04-26,Inactive
+41,CUS00041,Đặng Minh Quân,Female,1984-11-30,190000000041,913329015,ng.minh.qun.10041@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2025-07-30,Active
+42,CUS00042,Đỗ Đức Hải,Female,1973-12-24,250000000042,584840683,.c.hi.10042@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2025-03-19,Active
+43,CUS00043,Võ Anh Hòa,Female,1987-10-28,380000000043,397243549,v.anh.ha.10043@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2024-09-27,Active
+44,CUS00044,Trần Anh Lâm,Female,1999-07-03,620000000044,909646387,trn.anh.lm.10044@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Individual,2026-03-27,Active
+45,CUS00045,Phan Ngọc Bình,Male,1978-08-23,310000000045,537398826,phan.ngc.bnh.10045@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Individual,2026-03-15,Active
+46,CUS00046,Đặng Ngọc Châu,Male,1972-09-05,940000000046,976858006,ng.ngc.chu.10046@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2024-09-18,Active
+47,CUS00047,Phan Xuân Phúc,Female,1993-10-18,480000000047,828446144,phan.xun.phc.10047@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2026-02-12,Active
+48,CUS00048,Ngô Kim Hùng,Male,1999-02-14,570000000048,953422023,ng.kim.hng.10048@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2025-09-11,Active
+49,CUS00049,Ngô Gia Ngân,Male,1987-05-09,750000000049,843095923,ng.gia.ngn.10049@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Sinh viên,Individual,2024-10-21,Active
+50,CUS00050,Dương Hữu Quân,Male,2003-01-02,230000000050,812340053,dng.hu.qun.10050@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2025-03-19,Active
+51,CUS00051,Vũ Ngọc Hiếu,Male,1969-05-04,600000000051,773971550,v.ngc.hiu.10051@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Nhân viên văn phòng,Business,2024-07-03,Active
+52,CUS00052,Võ Đức Giang,Male,1979-09-18,880000000052,719723857,v.c.giang.10052@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2026-03-11,Active
+53,CUS00053,Huỳnh Gia Quân,Female,2000-09-28,980000000053,352695204,hunh.gia.qun.10053@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2025-10-09,Active
+54,CUS00054,Phạm Văn Ngân,Male,1984-10-13,500000000054,816479870,phm.vn.ngn.10054@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2024-10-23,Active
+55,CUS00055,Huỳnh Hữu Mai,Female,1972-10-08,680000000055,933776661,hunh.hu.mai.10055@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2025-08-08,Active
+56,CUS00056,Phạm Anh Tuấn,Female,1979-03-23,710000000056,759725583,phm.anh.tun.10056@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-11-17,Inactive
+57,CUS00057,Hoàng Văn Hòa,Female,1994-06-05,420000000057,828252172,hong.vn.ha.10057@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2025-06-22,Active
+58,CUS00058,Phạm Hữu Hạnh,Female,1979-10-26,700000000058,361991684,phm.hu.hnh.10058@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2024-06-04,Active
+59,CUS00059,Huỳnh Anh Phúc,Male,1989-01-02,140000000059,548908717,hunh.anh.phc.10059@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2024-05-18,Active
+60,CUS00060,Hoàng Xuân Phong,Female,1985-05-20,920000000060,958152837,hong.xun.phong.10060@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Individual,2025-06-04,Active
+61,CUS00061,Đỗ Gia Vy,Male,1992-05-28,910000000061,885061132,.gia.vy.10061@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Tự do,Business,2024-10-27,Active
+62,CUS00062,Hồ Anh Hùng,Female,1994-04-28,560000000062,501345873,h.anh.hng.10062@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2024-01-18,Active
+63,CUS00063,Huỳnh Xuân Hạnh,Female,1971-11-15,680000000063,937978876,hunh.xun.hnh.10063@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Kỹ sư,Individual,2024-07-26,Active
+64,CUS00064,Đỗ Gia Châu,Male,2002-03-06,800000000064,925184674,.gia.chu.10064@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2024-06-23,Active
+65,CUS00065,Lê Ngọc Linh,Female,1995-03-07,490000000065,338750309,l.ngc.linh.10065@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2024-03-30,Inactive
+66,CUS00066,Nguyễn Anh Linh,Female,1981-10-19,580000000066,889366563,nguyn.anh.linh.10066@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2024-07-29,Inactive
+67,CUS00067,Võ Minh Trang,Male,1978-05-21,690000000067,943241187,v.minh.trang.10067@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2024-01-06,Active
+68,CUS00068,Đặng Văn Hạnh,Male,1991-08-24,140000000068,857074228,ng.vn.hnh.10068@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2024-04-14,Active
+69,CUS00069,Phạm Kim Ngân,Male,1978-07-16,280000000069,923098964,phm.kim.ngn.10069@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Công chức,Individual,2025-05-13,Active
+70,CUS00070,Bùi Hữu Lâm,Female,1983-04-25,290000000070,737483789,bi.hu.lm.10070@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2025-05-10,Inactive
+71,CUS00071,Võ Minh Lâm,Male,1979-10-26,920000000071,398071266,v.minh.lm.10071@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Kỹ sư,Individual,2025-01-31,Active
+72,CUS00072,Đỗ Hữu Nga,Male,2004-01-02,520000000072,790991942,.hu.nga.10072@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Kinh doanh,Business,2026-01-14,Active
+73,CUS00073,Võ Gia Tuấn,Female,1988-12-09,930000000073,733848773,v.gia.tun.10073@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-08-14,Active
+74,CUS00074,Nguyễn Xuân Hạnh,Female,1989-10-27,840000000074,972125259,nguyn.xun.hnh.10074@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Giáo viên,Individual,2024-01-26,Active
+75,CUS00075,Đỗ Hữu Trang,Male,1997-11-14,550000000075,515189958,.hu.trang.10075@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2025-12-16,Inactive
+76,CUS00076,Nguyễn Văn Linh,Male,1996-09-21,290000000076,324069960,nguyn.vn.linh.10076@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2024-12-25,Active
+77,CUS00077,Đỗ Anh Nga,Female,2001-03-01,320000000077,395262370,.anh.nga.10077@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2024-01-27,Active
+78,CUS00078,Đỗ Quốc Hòa,Male,1983-03-08,580000000078,850014475,.quc.ha.10078@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2024-02-19,Active
+79,CUS00079,Phạm Quốc Sơn,Female,1967-02-02,190000000079,785093957,phm.quc.sn.10079@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2026-01-08,Inactive
+80,CUS00080,Lê Xuân Hạnh,Female,1982-03-21,270000000080,359048379,l.xun.hnh.10080@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2025-08-27,Inactive
+81,CUS00081,Nguyễn Hữu Hiếu,Male,1980-12-17,800000000081,846606770,nguyn.hu.hiu.10081@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Individual,2026-02-01,Active
+82,CUS00082,Lê Kim Lâm,Male,1969-02-08,100000000082,747104551,l.kim.lm.10082@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2025-07-14,Active
+83,CUS00083,Đặng Xuân Vy,Male,1978-02-03,620000000083,877592561,ng.xun.vy.10083@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2025-08-21,Active
+84,CUS00084,Lê Thị Hà,Female,1978-06-13,710000000084,339746410,l.th.h.10084@examplebank.vn,"9 Hùng Vương, Huế",Bác sĩ,Business,2025-03-04,Active
+85,CUS00085,Phan Gia Long,Male,1978-06-24,510000000085,992399264,phan.gia.long.10085@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kinh doanh,Business,2025-10-30,Active
+86,CUS00086,Ngô Thanh Khánh,Male,1995-08-01,800000000086,394742687,ng.thanh.khnh.10086@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2024-11-06,Active
+87,CUS00087,Bùi Anh Hạnh,Female,2000-05-25,580000000087,345559840,bi.anh.hnh.10087@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Business,2024-08-27,Active
+88,CUS00088,Đặng Hữu Châu,Female,1972-06-18,920000000088,909637940,ng.hu.chu.10088@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Business,2025-01-20,Active
+89,CUS00089,Võ Ngọc Ngân,Female,1981-10-13,600000000089,875530149,v.ngc.ngn.10089@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kỹ sư,Individual,2024-12-09,Active
+90,CUS00090,Lê Gia Hòa,Male,1988-05-17,710000000090,744633818,l.gia.ha.10090@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2025-12-08,Active
+91,CUS00091,Dương Kim Hạnh,Male,1979-11-06,810000000091,892416406,dng.kim.hnh.10091@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2024-09-28,Active
+92,CUS00092,Phan Văn Sơn,Female,1998-10-01,180000000092,918134285,phan.vn.sn.10092@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Individual,2024-11-15,Active
+93,CUS00093,Phan Xuân Dũng,Female,1992-09-10,320000000093,795632131,phan.xun.dng.10093@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2025-06-30,Active
+94,CUS00094,Đặng Thanh Linh,Male,1989-11-22,310000000094,821868941,ng.thanh.linh.10094@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2026-01-26,Inactive
+95,CUS00095,Bùi Đức Linh,Female,1986-12-03,310000000095,357202275,bi.c.linh.10095@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Công chức,Business,2025-10-07,Active
+96,CUS00096,Đặng Thị Hiếu,Male,1999-02-03,660000000096,924762802,ng.th.hiu.10096@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Individual,2025-07-23,Active
+97,CUS00097,Hồ Quốc Hải,Female,1972-06-12,880000000097,578855519,h.quc.hi.10097@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2025-06-28,Active
+98,CUS00098,Ngô Ngọc Quân,Female,1967-08-30,450000000098,571132831,ng.ngc.qun.10098@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Individual,2024-07-29,Active
+99,CUS00099,Vũ Thị Phúc,Female,1996-03-01,570000000099,893077746,v.th.phc.10099@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2025-09-17,Active
+100,CUS00100,Phan Quốc Linh,Female,1979-06-26,460000000100,751878706,phan.quc.linh.10100@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2026-02-07,Active
+101,CUS00101,Vũ Đức An,Male,2004-07-28,930000000101,719262391,v.c.an.10101@examplebank.vn,"9 Hùng Vương, Huế",Bác sĩ,Business,2024-11-10,Active
+102,CUS00102,Đỗ Quốc Linh,Male,1974-07-29,710000000102,312606894,.quc.linh.10102@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2024-05-27,Active
+103,CUS00103,Phan Thị Trang,Female,1981-06-28,480000000103,538866056,phan.th.trang.10103@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Business,2024-06-09,Active
+104,CUS00104,Phạm Hữu Trang,Female,2003-07-30,370000000104,381173472,phm.hu.trang.10104@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Business,2025-10-01,Active
+105,CUS00105,Đặng Kim Phong,Female,1974-03-21,760000000105,957208941,ng.kim.phong.10105@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Công chức,Individual,2024-02-11,Active
+106,CUS00106,Võ Văn Khánh,Female,2003-08-13,820000000106,836797002,v.vn.khnh.10106@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Sinh viên,Individual,2024-07-24,Inactive
+107,CUS00107,Võ Anh Phúc,Female,1996-06-25,610000000107,365100991,v.anh.phc.10107@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2025-10-07,Active
+108,CUS00108,Hồ Hữu Quân,Female,1997-09-29,400000000108,329160661,h.hu.qun.10108@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2025-04-26,Active
+109,CUS00109,Nguyễn Minh Mai,Female,1972-06-28,570000000109,578718345,nguyn.minh.mai.10109@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2026-03-23,Active
+110,CUS00110,Bùi Thị Mai,Female,1967-06-28,730000000110,911786170,bi.th.mai.10110@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2026-03-04,Active
+111,CUS00111,Huỳnh Thanh Giang,Female,1975-01-27,510000000111,547203591,hunh.thanh.giang.10111@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Individual,2024-02-24,Inactive
+112,CUS00112,Dương Đức Hòa,Male,1989-10-23,680000000112,332772399,dng.c.ha.10112@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-05-23,Active
+113,CUS00113,Hồ Quốc Giang,Male,1975-06-15,790000000113,766037373,h.quc.giang.10113@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2025-09-28,Active
+114,CUS00114,Phan Đức Bình,Male,1966-12-21,390000000114,948475563,phan.c.bnh.10114@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Business,2025-03-10,Active
+115,CUS00115,Phạm Anh Hiếu,Female,1979-04-09,670000000115,729171143,phm.anh.hiu.10115@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Business,2025-09-02,Active
+116,CUS00116,Vũ Anh Long,Male,1972-01-27,970000000116,786083023,v.anh.long.10116@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Individual,2024-07-05,Active
+117,CUS00117,Ngô Minh An,Male,1969-04-01,690000000117,381089183,ng.minh.an.10117@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2025-12-03,Active
+118,CUS00118,Dương Thị An,Female,2001-04-21,260000000118,398304158,dng.th.an.10118@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2024-11-03,Active
+119,CUS00119,Bùi Thanh Hà,Male,1977-05-03,450000000119,880622450,bi.thanh.h.10119@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2024-11-29,Active
+120,CUS00120,Phạm Hữu Vy,Male,1982-02-27,550000000120,854953132,phm.hu.vy.10120@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2025-01-22,Active
+121,CUS00121,Võ Gia Tuấn,Male,1969-06-29,410000000121,528909287,v.gia.tun.10121@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2024-12-27,Inactive
+122,CUS00122,Lê Quốc Ngân,Male,1996-07-22,990000000122,795519843,l.quc.ngn.10122@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Công chức,Individual,2025-07-11,Active
+123,CUS00123,Phạm Xuân Hạnh,Female,1965-01-12,520000000123,921798305,phm.xun.hnh.10123@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Nhân viên văn phòng,Business,2026-03-28,Active
+124,CUS00124,Ngô Gia Châu,Male,1980-02-06,480000000124,711979619,ng.gia.chu.10124@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Individual,2025-09-06,Active
+125,CUS00125,Ngô Minh Lâm,Male,1972-12-21,100000000125,939906992,ng.minh.lm.10125@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2025-04-02,Inactive
+126,CUS00126,Huỳnh Kim Châu,Female,1972-07-13,910000000126,386730263,hunh.kim.chu.10126@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Kỹ sư,Individual,2025-06-22,Active
+127,CUS00127,Phan Đức Trang,Female,1987-02-13,580000000127,751486610,phan.c.trang.10127@examplebank.vn,"9 Hùng Vương, Huế",Sinh viên,Individual,2024-09-15,Active
+128,CUS00128,Hoàng Thị Châu,Female,1972-03-21,190000000128,999398746,hong.th.chu.10128@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2024-09-21,Active
+129,CUS00129,Huỳnh Quốc Hải,Female,1978-05-05,400000000129,305813426,hunh.quc.hi.10129@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2025-02-16,Active
+130,CUS00130,Phạm Minh Phúc,Female,2002-11-07,240000000130,774826333,phm.minh.phc.10130@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Nhân viên văn phòng,Individual,2024-05-07,Active
+131,CUS00131,Vũ Đức Hiếu,Male,1971-10-13,990000000131,303595588,v.c.hiu.10131@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Individual,2025-02-21,Inactive
+132,CUS00132,Ngô Đức Ngân,Female,1968-07-17,600000000132,359866171,ng.c.ngn.10132@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Nhân viên văn phòng,Individual,2026-01-09,Inactive
+133,CUS00133,Lê Văn Linh,Male,2001-11-24,900000000133,582990333,l.vn.linh.10133@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Individual,2025-11-07,Active
+134,CUS00134,Hồ Kim Phong,Female,1970-01-18,630000000134,515799512,h.kim.phong.10134@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2026-03-22,Active
+135,CUS00135,Phan Hữu Mai,Male,1972-09-22,450000000135,816608327,phan.hu.mai.10135@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2026-01-04,Active
+136,CUS00136,Huỳnh Anh Hòa,Male,2003-12-24,390000000136,537737604,hunh.anh.ha.10136@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2026-02-02,Active
+137,CUS00137,Ngô Gia Yến,Male,1967-12-12,490000000137,947551820,ng.gia.yn.10137@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Sinh viên,Business,2026-03-11,Active
+138,CUS00138,Đỗ Quốc Hiếu,Female,1993-07-03,250000000138,324494538,.quc.hiu.10138@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Business,2025-12-22,Active
+139,CUS00139,Trần Anh An,Male,2003-04-21,830000000139,586624077,trn.anh.an.10139@examplebank.vn,"9 Hùng Vương, Huế",Sinh viên,Individual,2024-03-18,Active
+140,CUS00140,Bùi Minh Phong,Female,1992-04-16,490000000140,743324683,bi.minh.phong.10140@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2024-12-13,Active
+141,CUS00141,Ngô Gia Nga,Female,1995-09-14,230000000141,809682782,ng.gia.nga.10141@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Nhân viên văn phòng,Individual,2025-03-15,Active
+142,CUS00142,Dương Văn Vy,Female,1995-07-16,270000000142,369243075,dng.vn.vy.10142@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kinh doanh,Business,2025-09-19,Active
+143,CUS00143,Phạm Hữu Nga,Female,2002-12-04,310000000143,910128716,phm.hu.nga.10143@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2025-07-10,Active
+144,CUS00144,Huỳnh Quốc Trang,Female,1981-09-03,430000000144,928485908,hunh.quc.trang.10144@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2025-10-15,Active
+145,CUS00145,Võ Anh Linh,Male,1973-12-26,530000000145,898918103,v.anh.linh.10145@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Nhân viên văn phòng,Individual,2024-08-22,Active
+146,CUS00146,Nguyễn Đức Hiếu,Male,1986-12-18,210000000146,566493013,nguyn.c.hiu.10146@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2024-09-18,Active
+147,CUS00147,Phạm Văn Quân,Male,1996-02-10,540000000147,713518227,phm.vn.qun.10147@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2025-01-21,Active
+148,CUS00148,Lê Gia Mai,Male,2005-09-06,610000000148,327175136,l.gia.mai.10148@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Sinh viên,Individual,2024-10-19,Active
+149,CUS00149,Hoàng Ngọc Phong,Male,1994-04-27,120000000149,364354166,hong.ngc.phong.10149@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2024-03-15,Active
+150,CUS00150,Bùi Ngọc Hiếu,Female,2002-04-06,230000000150,971111125,bi.ngc.hiu.10150@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kinh doanh,Business,2024-08-01,Active
+151,CUS00151,Hoàng Minh Bình,Male,1995-11-15,710000000151,720015497,hong.minh.bnh.10151@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Individual,2026-02-10,Active
+152,CUS00152,Dương Anh Phúc,Female,1976-11-06,690000000152,301028370,dng.anh.phc.10152@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2025-12-10,Active
+153,CUS00153,Bùi Hữu Hà,Female,1992-11-22,440000000153,333144864,bi.hu.h.10153@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2025-07-09,Active
+154,CUS00154,Trần Minh Sơn,Male,1983-08-31,850000000154,886133068,trn.minh.sn.10154@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Nhân viên văn phòng,Individual,2024-09-04,Active
+155,CUS00155,Trần Thanh Long,Female,1994-05-20,500000000155,376755963,trn.thanh.long.10155@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2024-04-08,Active
+156,CUS00156,Phạm Đức Khánh,Male,1965-07-10,920000000156,554417332,phm.c.khnh.10156@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2024-08-18,Active
+157,CUS00157,Phan Quốc Châu,Female,1968-12-13,730000000157,839704058,phan.quc.chu.10157@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Business,2025-11-21,Active
+158,CUS00158,Phạm Hữu Quân,Female,2002-01-08,160000000158,583757340,phm.hu.qun.10158@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2025-06-13,Active
+159,CUS00159,Ngô Hữu Vy,Female,1996-06-30,230000000159,384874211,ng.hu.vy.10159@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2026-03-21,Active
+160,CUS00160,Đỗ Gia Dũng,Male,1999-08-21,670000000160,869145098,.gia.dng.10160@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2024-03-13,Inactive
+161,CUS00161,Đỗ Xuân Hà,Female,1994-06-30,860000000161,985399729,.xun.h.10161@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Individual,2024-06-09,Active
+162,CUS00162,Lê Thanh Phong,Female,1996-12-07,800000000162,526236969,l.thanh.phong.10162@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Business,2025-04-09,Active
+163,CUS00163,Võ Đức Ngân,Female,2004-05-12,640000000163,350161712,v.c.ngn.10163@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2025-10-10,Active
+164,CUS00164,Đỗ Anh Hải,Female,2001-07-08,670000000164,366526357,.anh.hi.10164@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2024-02-20,Active
+165,CUS00165,Dương Thanh Lâm,Male,1965-08-01,420000000165,567889767,dng.thanh.lm.10165@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2025-04-30,Active
+166,CUS00166,Hoàng Đức Hà,Male,1997-12-22,750000000166,334515237,hong.c.h.10166@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2024-10-17,Active
+167,CUS00167,Đặng Văn Tuấn,Female,2000-06-07,830000000167,937321054,ng.vn.tun.10167@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2025-04-12,Active
+168,CUS00168,Dương Quốc Quân,Female,1978-03-03,370000000168,959890649,dng.quc.qun.10168@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kinh doanh,Business,2025-05-29,Inactive
+169,CUS00169,Dương Gia Lâm,Female,1989-03-27,460000000169,398384081,dng.gia.lm.10169@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2025-08-22,Inactive
+170,CUS00170,Hồ Ngọc Nga,Male,1995-01-26,900000000170,584157976,h.ngc.nga.10170@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2024-04-11,Active
+171,CUS00171,Nguyễn Đức Sơn,Male,1968-04-15,160000000171,575522364,nguyn.c.sn.10171@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Sinh viên,Individual,2024-02-28,Active
+172,CUS00172,Võ Văn Phúc,Male,1996-06-10,190000000172,791730743,v.vn.phc.10172@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Sinh viên,Individual,2024-04-08,Active
+173,CUS00173,Phạm Minh Trang,Male,1978-05-16,960000000173,790810535,phm.minh.trang.10173@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2025-04-03,Active
+174,CUS00174,Đỗ Kim Khánh,Male,1972-03-22,330000000174,562165079,.kim.khnh.10174@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2025-10-03,Active
+175,CUS00175,Hoàng Hữu Châu,Male,1997-07-20,840000000175,893622014,hong.hu.chu.10175@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-06-01,Active
+176,CUS00176,Đỗ Xuân Giang,Female,1984-03-19,310000000176,337762363,.xun.giang.10176@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2025-07-20,Active
+177,CUS00177,Hồ Anh Mai,Male,1993-12-16,870000000177,388152800,h.anh.mai.10177@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Sinh viên,Business,2024-06-18,Active
+178,CUS00178,Nguyễn Xuân Ngân,Male,1989-09-29,430000000178,985613858,nguyn.xun.ngn.10178@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2024-11-26,Active
+179,CUS00179,Trần Thanh Khánh,Male,2003-01-15,880000000179,571155817,trn.thanh.khnh.10179@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2024-01-17,Active
+180,CUS00180,Phạm Thị Hiếu,Male,1994-12-29,360000000180,993440937,phm.th.hiu.10180@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2024-12-29,Active
+181,CUS00181,Đặng Ngọc Ngân,Female,1981-05-22,850000000181,353953844,ng.ngc.ngn.10181@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Individual,2025-08-08,Active
+182,CUS00182,Vũ Minh Hạnh,Female,1974-06-28,290000000182,516864316,v.minh.hnh.10182@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Công chức,Individual,2026-03-10,Active
+183,CUS00183,Bùi Thanh An,Male,1990-09-23,850000000183,515811954,bi.thanh.an.10183@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2024-03-08,Active
+184,CUS00184,Bùi Anh Châu,Female,2003-11-27,710000000184,524157651,bi.anh.chu.10184@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Individual,2025-11-28,Inactive
+185,CUS00185,Đặng Thị Hạnh,Male,1969-11-14,120000000185,559686195,ng.th.hnh.10185@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2025-08-21,Active
+186,CUS00186,Lê Xuân Nga,Female,1981-08-13,150000000186,949473898,l.xun.nga.10186@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2025-11-01,Active
+187,CUS00187,Vũ Quốc Châu,Female,1973-06-24,100000000187,351066331,v.quc.chu.10187@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Tự do,Individual,2025-09-26,Active
+188,CUS00188,Phan Xuân Khánh,Female,1998-11-13,360000000188,855154957,phan.xun.khnh.10188@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2025-03-04,Active
+189,CUS00189,Trần Kim Hạnh,Male,1974-08-15,750000000189,878660368,trn.kim.hnh.10189@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Individual,2024-09-08,Active
+190,CUS00190,Phan Thị Châu,Female,1968-08-04,870000000190,379462907,phan.th.chu.10190@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Nhân viên văn phòng,Individual,2024-12-10,Active
+191,CUS00191,Nguyễn Quốc Quân,Male,1966-07-05,860000000191,952102019,nguyn.quc.qun.10191@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2025-03-20,Active
+192,CUS00192,Phan Xuân Hải,Male,1969-01-17,800000000192,775538294,phan.xun.hi.10192@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2024-01-24,Active
+193,CUS00193,Lê Thanh Nam,Female,1980-04-02,240000000193,998856957,l.thanh.nam.10193@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2024-04-22,Inactive
+194,CUS00194,Bùi Đức Ngân,Male,1976-07-26,180000000194,869623950,bi.c.ngn.10194@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2026-01-18,Active
+195,CUS00195,Phan Hữu Trang,Male,1986-05-18,500000000195,725179172,phan.hu.trang.10195@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kinh doanh,Business,2024-04-28,Active
+196,CUS00196,Phạm Quốc Yến,Male,1999-12-11,230000000196,396667504,phm.quc.yn.10196@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Business,2025-07-07,Active
+197,CUS00197,Ngô Anh Mai,Female,1982-11-06,380000000197,915490387,ng.anh.mai.10197@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Công chức,Individual,2026-03-05,Inactive
+198,CUS00198,Võ Đức Hùng,Male,1982-01-08,840000000198,336252463,v.c.hng.10198@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Công chức,Individual,2024-01-19,Active
+199,CUS00199,Đỗ Gia Khánh,Female,1973-01-26,830000000199,596878581,.gia.khnh.10199@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Business,2025-03-10,Active
+200,CUS00200,Lê Thanh Mai,Female,2000-03-24,720000000200,728001228,l.thanh.mai.10200@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2026-03-14,Active
+201,CUS00201,Hoàng Gia Khánh,Female,1965-11-21,620000000201,336656592,hong.gia.khnh.10201@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2025-02-04,Active
+202,CUS00202,Hồ Kim Long,Female,1985-10-21,900000000202,586946490,h.kim.long.10202@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2025-08-14,Active
+203,CUS00203,Bùi Anh Sơn,Female,2004-10-26,660000000203,775418122,bi.anh.sn.10203@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2025-09-06,Active
+204,CUS00204,Trần Thị Châu,Male,1999-08-01,600000000204,970216832,trn.th.chu.10204@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2024-03-24,Active
+205,CUS00205,Lê Ngọc Yến,Male,1994-10-07,550000000205,784895195,l.ngc.yn.10205@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Công chức,Individual,2024-02-14,Active
+206,CUS00206,Dương Xuân Linh,Female,1986-08-10,790000000206,584323088,dng.xun.linh.10206@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2025-04-26,Active
+207,CUS00207,Nguyễn Kim Mai,Male,1999-05-11,650000000207,757518427,nguyn.kim.mai.10207@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-04-10,Active
+208,CUS00208,Hoàng Thị Linh,Female,1977-10-09,930000000208,984812662,hong.th.linh.10208@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Business,2026-03-13,Active
+209,CUS00209,Lê Văn Nga,Male,1977-08-28,440000000209,577214337,l.vn.nga.10209@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2024-10-15,Active
+210,CUS00210,Huỳnh Thị Yến,Female,1999-10-18,600000000210,351823097,hunh.th.yn.10210@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2024-03-28,Active
+211,CUS00211,Phạm Kim Bình,Male,1988-05-18,950000000211,546336095,phm.kim.bnh.10211@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2025-12-16,Active
+212,CUS00212,Phạm Gia Bình,Male,1993-05-23,650000000212,707532956,phm.gia.bnh.10212@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Nhân viên văn phòng,Individual,2024-06-24,Active
+213,CUS00213,Phạm Minh Mai,Male,1967-09-07,550000000213,577129778,phm.minh.mai.10213@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Công chức,Individual,2025-06-09,Active
+214,CUS00214,Đỗ Thanh Khánh,Male,1986-10-09,660000000214,926113728,.thanh.khnh.10214@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2025-01-24,Active
+215,CUS00215,Vũ Anh Yến,Female,1965-01-12,910000000215,931087276,v.anh.yn.10215@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2025-07-24,Active
+216,CUS00216,Vũ Ngọc Giang,Female,1983-05-21,920000000216,715081824,v.ngc.giang.10216@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kỹ sư,Individual,2025-03-15,Active
+217,CUS00217,Ngô Thanh Quân,Female,1967-03-16,560000000217,560924808,ng.thanh.qun.10217@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2026-03-27,Active
+218,CUS00218,Dương Thanh Yến,Female,1988-09-24,150000000218,380251231,dng.thanh.yn.10218@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kinh doanh,Business,2024-03-31,Active
+219,CUS00219,Võ Kim Nga,Female,1995-04-04,680000000219,881143194,v.kim.nga.10219@examplebank.vn,"9 Hùng Vương, Huế",Giáo viên,Individual,2024-06-12,Active
+220,CUS00220,Huỳnh Gia Linh,Male,1990-04-06,790000000220,535734900,hunh.gia.linh.10220@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2025-05-17,Active
+221,CUS00221,Lê Anh An,Male,2003-05-22,500000000221,379895550,l.anh.an.10221@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Công chức,Individual,2024-12-10,Active
+222,CUS00222,Hoàng Gia Ngân,Female,2001-05-20,480000000222,355203448,hong.gia.ngn.10222@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Kỹ sư,Individual,2024-12-27,Active
+223,CUS00223,Nguyễn Kim Vy,Male,1999-12-30,170000000223,738488266,nguyn.kim.vy.10223@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Sinh viên,Individual,2025-08-15,Active
+224,CUS00224,Phan Văn Hòa,Female,1989-03-22,820000000224,536169975,phan.vn.ha.10224@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Business,2024-03-04,Active
+225,CUS00225,Hồ Thanh Giang,Male,1986-05-07,830000000225,352346741,h.thanh.giang.10225@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-06-06,Active
+226,CUS00226,Võ Xuân Trang,Male,1968-03-19,440000000226,839064335,v.xun.trang.10226@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Sinh viên,Business,2025-01-17,Active
+227,CUS00227,Huỳnh Xuân Yến,Female,1967-01-06,390000000227,561707261,hunh.xun.yn.10227@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2024-08-14,Active
+228,CUS00228,Hồ Thị Hòa,Male,1979-11-21,360000000228,925756966,h.th.ha.10228@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2026-01-01,Active
+229,CUS00229,Võ Văn Hiếu,Female,1974-01-02,990000000229,924906693,v.vn.hiu.10229@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2024-04-03,Active
+230,CUS00230,Phan Quốc Lâm,Female,1986-09-28,860000000230,901957093,phan.quc.lm.10230@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Individual,2024-06-03,Active
+231,CUS00231,Nguyễn Gia Quân,Female,1975-08-06,740000000231,786888052,nguyn.gia.qun.10231@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2025-07-06,Active
+232,CUS00232,Bùi Minh Châu,Male,1983-09-21,400000000232,919935215,bi.minh.chu.10232@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2026-03-19,Active
+233,CUS00233,Đỗ Kim Nam,Male,1994-06-09,820000000233,535913877,.kim.nam.10233@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-10-30,Inactive
+234,CUS00234,Vũ Kim Yến,Male,1969-10-16,260000000234,509666520,v.kim.yn.10234@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2024-08-24,Active
+235,CUS00235,Lê Ngọc Phong,Male,2003-03-24,590000000235,841249992,l.ngc.phong.10235@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2025-08-03,Active
+236,CUS00236,Lê Đức Phong,Female,2004-10-25,410000000236,840733675,l.c.phong.10236@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2025-05-19,Active
+237,CUS00237,Vũ Văn Hạnh,Male,1990-01-07,590000000237,979148721,v.vn.hnh.10237@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2025-09-06,Active
+238,CUS00238,Đỗ Ngọc Giang,Male,1997-06-01,740000000238,315853304,.ngc.giang.10238@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2025-12-02,Active
+239,CUS00239,Hoàng Gia Sơn,Male,1970-02-14,670000000239,707796150,hong.gia.sn.10239@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2024-07-10,Active
+240,CUS00240,Ngô Hữu Giang,Male,1999-07-03,160000000240,837921890,ng.hu.giang.10240@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Business,2024-08-12,Active
+241,CUS00241,Ngô Đức Nga,Male,1974-09-24,850000000241,844608268,ng.c.nga.10241@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2026-02-05,Active
+242,CUS00242,Nguyễn Hữu Khánh,Male,1994-12-03,830000000242,929041666,nguyn.hu.khnh.10242@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Nhân viên văn phòng,Individual,2024-08-13,Inactive
+243,CUS00243,Đặng Gia Bình,Female,1981-07-14,580000000243,378041834,ng.gia.bnh.10243@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kinh doanh,Business,2025-04-09,Active
+244,CUS00244,Nguyễn Thị Ngân,Female,1997-06-25,980000000244,999263593,nguyn.th.ngn.10244@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Nhân viên văn phòng,Individual,2024-05-16,Active
+245,CUS00245,Võ Kim Phúc,Male,2004-08-21,880000000245,579006187,v.kim.phc.10245@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2026-02-04,Active
+246,CUS00246,Huỳnh Ngọc Vy,Male,1995-12-15,460000000246,773530637,hunh.ngc.vy.10246@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2024-01-18,Active
+247,CUS00247,Huỳnh Gia Quân,Male,1993-12-18,270000000247,814884890,hunh.gia.qun.10247@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2026-01-07,Active
+248,CUS00248,Huỳnh Ngọc Nga,Female,2000-11-12,550000000248,392096853,hunh.ngc.nga.10248@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2024-11-19,Active
+249,CUS00249,Đỗ Gia Sơn,Female,1968-11-23,730000000249,538351302,.gia.sn.10249@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2025-02-25,Active
+250,CUS00250,Hồ Đức Nam,Female,1986-09-09,770000000250,771889617,h.c.nam.10250@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Công chức,Individual,2024-10-22,Active
+251,CUS00251,Trần Văn Hòa,Female,1985-12-11,150000000251,356353831,trn.vn.ha.10251@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2024-05-15,Active
+252,CUS00252,Bùi Thị Hiếu,Female,1970-02-19,110000000252,951552985,bi.th.hiu.10252@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2024-09-01,Active
+253,CUS00253,Dương Gia Nga,Male,1966-04-21,700000000253,310415586,dng.gia.nga.10253@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2024-03-19,Active
+254,CUS00254,Đỗ Hữu Vy,Female,1990-06-21,260000000254,389446742,.hu.vy.10254@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2024-05-02,Active
+255,CUS00255,Hoàng Gia Lâm,Female,1985-05-02,720000000255,301482355,hong.gia.lm.10255@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-05-28,Active
+256,CUS00256,Huỳnh Ngọc Phúc,Female,1982-12-24,850000000256,822140264,hunh.ngc.phc.10256@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2025-04-14,Active
+257,CUS00257,Võ Kim Hạnh,Female,1970-02-17,850000000257,945819018,v.kim.hnh.10257@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2024-05-01,Active
+258,CUS00258,Bùi Văn Châu,Male,1998-12-17,280000000258,542642827,bi.vn.chu.10258@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2024-08-03,Active
+259,CUS00259,Đỗ Gia Châu,Female,2003-01-09,260000000259,709905912,.gia.chu.10259@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Sinh viên,Individual,2024-01-13,Active
+260,CUS00260,Đặng Thanh Phúc,Female,1982-02-12,650000000260,921158342,ng.thanh.phc.10260@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Business,2025-08-17,Active
+261,CUS00261,Bùi Văn Giang,Male,1968-10-19,270000000261,888696448,bi.vn.giang.10261@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-11-09,Active
+262,CUS00262,Phan Xuân An,Male,1996-12-11,740000000262,745395714,phan.xun.an.10262@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kỹ sư,Individual,2026-02-12,Active
+263,CUS00263,Võ Anh Long,Male,1976-01-01,700000000263,365569504,v.anh.long.10263@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Individual,2024-05-01,Active
+264,CUS00264,Phan Gia Vy,Male,1966-08-02,980000000264,977504109,phan.gia.vy.10264@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Individual,2025-03-25,Active
+265,CUS00265,Lê Ngọc Châu,Male,1992-08-16,450000000265,780115148,l.ngc.chu.10265@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Tự do,Individual,2025-01-26,Active
+266,CUS00266,Vũ Minh Vy,Female,1968-10-14,280000000266,991497246,v.minh.vy.10266@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2024-02-21,Active
+267,CUS00267,Nguyễn Hữu Hiếu,Male,1985-10-25,610000000267,837753741,nguyn.hu.hiu.10267@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2024-03-22,Active
+268,CUS00268,Phan Hữu Hùng,Male,1988-10-31,910000000268,794983206,phan.hu.hng.10268@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2024-03-04,Active
+269,CUS00269,Đỗ Quốc Trang,Female,1995-05-27,980000000269,530004563,.quc.trang.10269@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2024-10-29,Active
+270,CUS00270,Nguyễn Xuân Châu,Male,1996-10-06,250000000270,381685986,nguyn.xun.chu.10270@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2024-12-02,Active
+271,CUS00271,Dương Thị Phúc,Female,1996-01-20,950000000271,727203928,dng.th.phc.10271@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Business,2025-03-05,Active
+272,CUS00272,Dương Quốc Phong,Female,1969-11-12,280000000272,972697105,dng.quc.phong.10272@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2024-10-04,Active
+273,CUS00273,Dương Đức Giang,Female,1976-12-14,290000000273,795594487,dng.c.giang.10273@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Business,2024-02-28,Active
+274,CUS00274,Phan Kim Yến,Female,1979-12-17,970000000274,746905904,phan.kim.yn.10274@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2024-07-07,Active
+275,CUS00275,Võ Văn Lâm,Female,2005-03-19,230000000275,748410092,v.vn.lm.10275@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Individual,2025-04-09,Active
+276,CUS00276,Bùi Anh Mai,Male,1966-08-30,530000000276,337426598,bi.anh.mai.10276@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Nhân viên văn phòng,Individual,2025-11-28,Active
+277,CUS00277,Dương Thị Bình,Male,1986-02-20,890000000277,326069806,dng.th.bnh.10277@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2026-01-29,Active
+278,CUS00278,Trần Đức Phong,Male,2001-02-01,350000000278,838741653,trn.c.phong.10278@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kinh doanh,Business,2024-12-08,Active
+279,CUS00279,Lê Gia Châu,Male,1998-12-25,630000000279,565490086,l.gia.chu.10279@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2025-03-01,Active
+280,CUS00280,Trần Văn An,Female,1983-09-03,980000000280,862654960,trn.vn.an.10280@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2024-05-18,Active
+281,CUS00281,Trần Hữu Yến,Female,1965-03-16,810000000281,519968954,trn.hu.yn.10281@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-06-24,Active
+282,CUS00282,Trần Minh Quân,Male,1972-03-02,950000000282,303226841,trn.minh.qun.10282@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2026-02-11,Inactive
+283,CUS00283,Lê Văn Mai,Male,2005-02-24,400000000283,853163730,l.vn.mai.10283@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Business,2024-06-29,Active
+284,CUS00284,Dương Quốc Châu,Male,2004-12-11,650000000284,526134132,dng.quc.chu.10284@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2026-01-22,Active
+285,CUS00285,Đặng Văn Hiếu,Female,1985-07-28,630000000285,572217995,ng.vn.hiu.10285@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kinh doanh,Business,2024-06-21,Active
+286,CUS00286,Vũ Quốc Ngân,Female,1965-08-26,640000000286,524299984,v.quc.ngn.10286@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2025-12-19,Active
+287,CUS00287,Đỗ Ngọc Bình,Female,2001-04-28,990000000287,342507912,.ngc.bnh.10287@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2025-09-04,Active
+288,CUS00288,Hoàng Minh Sơn,Female,1985-10-21,270000000288,818670636,hong.minh.sn.10288@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Business,2024-02-07,Active
+289,CUS00289,Đỗ Xuân Nga,Male,1992-10-31,520000000289,359303403,.xun.nga.10289@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kỹ sư,Business,2024-11-17,Active
+290,CUS00290,Lê Gia Hạnh,Female,1998-01-29,840000000290,577385403,l.gia.hnh.10290@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Individual,2024-06-25,Active
+291,CUS00291,Ngô Thị Mai,Female,1992-11-08,570000000291,318031901,ng.th.mai.10291@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Individual,2025-03-30,Active
+292,CUS00292,Lê Quốc Nam,Female,1995-08-12,790000000292,544701088,l.quc.nam.10292@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2025-03-31,Active
+293,CUS00293,Bùi Hữu Vy,Female,1985-07-18,480000000293,917124970,bi.hu.vy.10293@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Individual,2026-01-25,Active
+294,CUS00294,Đặng Minh Sơn,Male,1972-11-13,980000000294,511954327,ng.minh.sn.10294@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2025-03-19,Inactive
+295,CUS00295,Huỳnh Đức Nga,Male,1966-02-13,610000000295,879919556,hunh.c.nga.10295@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Individual,2025-04-13,Active
+296,CUS00296,Hồ Xuân Quân,Female,1995-11-30,240000000296,891534840,h.xun.qun.10296@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Business,2025-11-17,Active
+297,CUS00297,Đặng Ngọc Hạnh,Male,1968-10-01,780000000297,869934650,ng.ngc.hnh.10297@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-10-31,Active
+298,CUS00298,Ngô Thanh Khánh,Male,1977-10-08,540000000298,734528744,ng.thanh.khnh.10298@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2025-08-02,Active
+299,CUS00299,Đỗ Thanh Giang,Male,1974-04-28,480000000299,895395306,.thanh.giang.10299@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2024-05-13,Active
+300,CUS00300,Vũ Kim Ngân,Male,2002-05-03,580000000300,750883540,v.kim.ngn.10300@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Individual,2024-11-05,Active
+301,CUS00301,Bùi Hữu Mai,Female,1973-01-17,720000000301,507495344,bi.hu.mai.10301@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Individual,2025-03-22,Active
+302,CUS00302,Đỗ Thị Khánh,Female,1972-04-22,840000000302,314630369,.th.khnh.10302@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Sinh viên,Business,2024-01-28,Active
+303,CUS00303,Bùi Thị Nam,Male,1991-11-11,310000000303,933872635,bi.th.nam.10303@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Individual,2024-10-11,Active
+304,CUS00304,Lê Ngọc Hòa,Female,1980-04-07,300000000304,325875698,l.ngc.ha.10304@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2026-01-23,Active
+305,CUS00305,Trần Minh An,Female,1996-01-01,560000000305,588573708,trn.minh.an.10305@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2025-06-24,Active
+306,CUS00306,Lê Kim Hạnh,Male,1970-11-04,200000000306,867077017,l.kim.hnh.10306@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Individual,2024-07-13,Active
+307,CUS00307,Nguyễn Thị Hòa,Male,1991-12-30,360000000307,991308993,nguyn.th.ha.10307@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Nhân viên văn phòng,Individual,2024-05-29,Active
+308,CUS00308,Đặng Quốc Nam,Male,2001-10-07,840000000308,357917079,ng.quc.nam.10308@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2024-04-16,Active
+309,CUS00309,Lê Đức Quân,Female,1982-01-11,640000000309,554734543,l.c.qun.10309@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Tự do,Individual,2024-10-07,Active
+310,CUS00310,Trần Gia Mai,Female,1985-07-01,860000000310,768249488,trn.gia.mai.10310@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Công chức,Individual,2025-08-20,Inactive
+311,CUS00311,Lê Văn Quân,Female,1984-08-26,760000000311,313697813,l.vn.qun.10311@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2024-06-12,Active
+312,CUS00312,Ngô Thanh Dũng,Female,1977-06-30,840000000312,927644644,ng.thanh.dng.10312@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2025-10-21,Active
+313,CUS00313,Trần Thị Hiếu,Male,1993-03-10,270000000313,300069361,trn.th.hiu.10313@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2026-02-11,Active
+314,CUS00314,Hồ Ngọc Tuấn,Male,1978-03-03,940000000314,842385904,h.ngc.tun.10314@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2025-12-24,Active
+315,CUS00315,Ngô Thanh Long,Male,1972-12-07,810000000315,781433754,ng.thanh.long.10315@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Công chức,Individual,2024-02-25,Active
+316,CUS00316,Võ Văn Lâm,Female,1992-09-03,960000000316,772051385,v.vn.lm.10316@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2026-02-07,Active
+317,CUS00317,Huỳnh Gia Linh,Male,1976-02-09,400000000317,759033034,hunh.gia.linh.10317@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2024-03-28,Active
+318,CUS00318,Hoàng Văn Sơn,Female,1981-12-11,830000000318,830462486,hong.vn.sn.10318@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Individual,2024-02-04,Active
+319,CUS00319,Phan Quốc Mai,Female,1976-11-23,160000000319,794270803,phan.quc.mai.10319@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2024-11-28,Active
+320,CUS00320,Vũ Thanh Hải,Female,1987-08-22,480000000320,863425658,v.thanh.hi.10320@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2024-04-29,Active
+321,CUS00321,Bùi Kim Long,Male,1988-06-05,350000000321,742778489,bi.kim.long.10321@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-11-04,Active
+322,CUS00322,Ngô Anh Phúc,Male,1983-03-17,400000000322,310734949,ng.anh.phc.10322@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kinh doanh,Business,2025-02-02,Active
+323,CUS00323,Nguyễn Anh Vy,Male,1997-05-30,720000000323,308320986,nguyn.anh.vy.10323@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2024-09-30,Active
+324,CUS00324,Ngô Minh Hạnh,Male,1988-05-31,950000000324,999282183,ng.minh.hnh.10324@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Business,2026-02-16,Active
+325,CUS00325,Phạm Thanh Hải,Male,1974-08-09,450000000325,848056154,phm.thanh.hi.10325@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kinh doanh,Business,2024-06-14,Inactive
+326,CUS00326,Huỳnh Đức Sơn,Male,1993-12-14,870000000326,386967253,hunh.c.sn.10326@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Individual,2025-04-23,Active
+327,CUS00327,Trần Ngọc Hạnh,Male,2005-10-23,600000000327,739728143,trn.ngc.hnh.10327@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-08-26,Active
+328,CUS00328,Ngô Thị Yến,Female,2002-09-25,520000000328,888865368,ng.th.yn.10328@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2026-01-01,Active
+329,CUS00329,Hồ Văn Phúc,Male,1965-02-20,610000000329,563015987,h.vn.phc.10329@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-11-19,Active
+330,CUS00330,Vũ Đức Trang,Male,1995-11-03,850000000330,771418982,v.c.trang.10330@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Individual,2025-02-08,Inactive
+331,CUS00331,Đặng Hữu Hạnh,Male,1976-09-29,990000000331,506619150,ng.hu.hnh.10331@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2025-12-19,Active
+332,CUS00332,Ngô Hữu Mai,Male,1973-07-19,440000000332,773422871,ng.hu.mai.10332@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2024-12-14,Active
+333,CUS00333,Nguyễn Anh Hiếu,Male,1981-08-01,840000000333,804893234,nguyn.anh.hiu.10333@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2025-12-01,Active
+334,CUS00334,Nguyễn Văn Hùng,Female,1992-03-14,950000000334,978053961,nguyn.vn.hng.10334@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2026-01-01,Active
+335,CUS00335,Lê Ngọc Mai,Male,1969-01-08,500000000335,942394923,l.ngc.mai.10335@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2025-12-28,Active
+336,CUS00336,Đặng Anh Nam,Male,1979-02-26,720000000336,559641014,ng.anh.nam.10336@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2025-11-07,Active
+337,CUS00337,Trần Đức Bình,Female,1985-07-14,730000000337,388108115,trn.c.bnh.10337@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2025-07-07,Active
+338,CUS00338,Đặng Quốc Ngân,Male,1983-09-06,190000000338,576806635,ng.quc.ngn.10338@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2026-03-28,Active
+339,CUS00339,Nguyễn Thị Long,Female,1991-08-28,940000000339,330649997,nguyn.th.long.10339@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Individual,2025-12-06,Active
+340,CUS00340,Hồ Hữu Hòa,Male,1989-07-18,870000000340,802273023,h.hu.ha.10340@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2024-03-27,Active
+341,CUS00341,Lê Thị Hòa,Female,2005-07-16,970000000341,916854845,l.th.ha.10341@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-11-02,Active
+342,CUS00342,Hồ Gia Phong,Female,1969-03-03,150000000342,934261465,h.gia.phong.10342@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Business,2025-11-05,Active
+343,CUS00343,Dương Đức Hòa,Female,2002-10-01,410000000343,945595544,dng.c.ha.10343@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Individual,2024-07-17,Active
+344,CUS00344,Trần Ngọc An,Male,2000-04-07,330000000344,804737748,trn.ngc.an.10344@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2025-12-20,Inactive
+345,CUS00345,Phạm Minh Châu,Male,1984-06-17,780000000345,301146896,phm.minh.chu.10345@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2025-02-06,Active
+346,CUS00346,Huỳnh Kim Quân,Male,1970-08-12,270000000346,318610412,hunh.kim.qun.10346@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2025-04-15,Active
+347,CUS00347,Lê Đức Linh,Male,2005-06-25,290000000347,894852580,l.c.linh.10347@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Sinh viên,Individual,2024-06-29,Active
+348,CUS00348,Phan Thanh Mai,Male,1986-11-14,610000000348,857998200,phan.thanh.mai.10348@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2025-03-27,Active
+349,CUS00349,Dương Hữu Linh,Female,1992-12-07,920000000349,744174455,dng.hu.linh.10349@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2024-06-30,Inactive
+350,CUS00350,Bùi Đức Giang,Female,2002-05-16,960000000350,777862761,bi.c.giang.10350@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-08-29,Active
+351,CUS00351,Trần Thanh Mai,Male,1989-12-24,160000000351,332618583,trn.thanh.mai.10351@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2024-12-30,Active
+352,CUS00352,Võ Quốc Mai,Female,1999-07-07,150000000352,921656794,v.quc.mai.10352@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Công chức,Individual,2025-06-12,Inactive
+353,CUS00353,Trần Xuân Phong,Male,1972-06-29,900000000353,389124570,trn.xun.phong.10353@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2024-03-06,Active
+354,CUS00354,Trần Quốc Long,Male,2002-06-13,700000000354,721274627,trn.quc.long.10354@examplebank.vn,"9 Hùng Vương, Huế",Bác sĩ,Business,2024-01-11,Active
+355,CUS00355,Hồ Thanh Linh,Female,1966-05-03,660000000355,577503474,h.thanh.linh.10355@examplebank.vn,"9 Hùng Vương, Huế",Bác sĩ,Business,2025-12-13,Active
+356,CUS00356,Dương Hữu Giang,Female,1983-10-23,610000000356,987338961,dng.hu.giang.10356@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2024-03-30,Active
+357,CUS00357,Dương Ngọc Phong,Female,2004-10-26,930000000357,878053785,dng.ngc.phong.10357@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2025-11-17,Active
+358,CUS00358,Võ Anh Nam,Male,1966-04-02,790000000358,928345782,v.anh.nam.10358@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Individual,2024-09-05,Active
+359,CUS00359,Trần Đức Hòa,Female,1980-03-16,400000000359,958655327,trn.c.ha.10359@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Nhân viên văn phòng,Individual,2024-01-09,Active
+360,CUS00360,Đỗ Quốc Dũng,Male,2001-11-29,560000000360,807800844,.quc.dng.10360@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Individual,2026-03-13,Active
+361,CUS00361,Đặng Ngọc Nam,Female,1993-07-20,640000000361,869741544,ng.ngc.nam.10361@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2025-02-13,Active
+362,CUS00362,Vũ Văn Trang,Male,1991-12-27,620000000362,315013934,v.vn.trang.10362@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2025-07-27,Active
+363,CUS00363,Phan Văn Hòa,Male,2001-09-29,720000000363,313845597,phan.vn.ha.10363@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Công chức,Individual,2024-11-30,Active
+364,CUS00364,Lê Minh Nam,Female,1971-09-07,510000000364,376423598,l.minh.nam.10364@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2025-11-29,Active
+365,CUS00365,Đỗ Văn Ngân,Male,1973-08-19,890000000365,950514819,.vn.ngn.10365@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Nhân viên văn phòng,Individual,2024-07-11,Inactive
+366,CUS00366,Hồ Quốc Hạnh,Male,2001-03-13,780000000366,935493105,h.quc.hnh.10366@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2025-11-21,Active
+367,CUS00367,Trần Ngọc Hà,Male,1976-06-19,210000000367,534163003,trn.ngc.h.10367@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-08-11,Active
+368,CUS00368,Hoàng Thanh Yến,Male,1975-10-01,860000000368,925592350,hong.thanh.yn.10368@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2024-03-21,Active
+369,CUS00369,Dương Văn Hiếu,Male,1999-03-24,810000000369,534062939,dng.vn.hiu.10369@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2024-06-06,Active
+370,CUS00370,Dương Ngọc Long,Female,2002-03-16,890000000370,761092269,dng.ngc.long.10370@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2024-01-02,Active
+371,CUS00371,Hoàng Văn Hà,Female,1969-01-09,600000000371,387982588,hong.vn.h.10371@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2024-04-18,Active
+372,CUS00372,Vũ Anh Hạnh,Male,1985-08-17,860000000372,706604964,v.anh.hnh.10372@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Công chức,Individual,2025-06-14,Active
+373,CUS00373,Trần Hữu Phúc,Female,1995-02-27,250000000373,793638891,trn.hu.phc.10373@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2024-02-18,Inactive
+374,CUS00374,Nguyễn Quốc Trang,Female,1973-08-04,210000000374,968299047,nguyn.quc.trang.10374@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2025-03-12,Active
+375,CUS00375,Phan Thị Hiếu,Female,1972-08-25,800000000375,565650102,phan.th.hiu.10375@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kinh doanh,Business,2026-02-16,Active
+376,CUS00376,Hồ Anh Hải,Female,1965-02-02,640000000376,383841545,h.anh.hi.10376@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Sinh viên,Individual,2025-01-27,Active
+377,CUS00377,Nguyễn Anh Linh,Female,1965-03-26,600000000377,538892699,nguyn.anh.linh.10377@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2025-11-28,Active
+378,CUS00378,Trần Hữu Phúc,Female,1984-05-18,130000000378,979824988,trn.hu.phc.10378@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kinh doanh,Business,2024-02-13,Inactive
+379,CUS00379,Đặng Đức Tuấn,Male,1968-11-02,170000000379,338670806,ng.c.tun.10379@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Individual,2025-11-24,Active
+380,CUS00380,Nguyễn Ngọc Bình,Female,1969-04-20,890000000380,825603786,nguyn.ngc.bnh.10380@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2025-08-15,Active
+381,CUS00381,Hồ Văn Long,Male,1969-11-05,230000000381,350715624,h.vn.long.10381@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Business,2025-05-24,Active
+382,CUS00382,Hồ Văn Bình,Female,1988-01-08,930000000382,738713330,h.vn.bnh.10382@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2025-04-29,Active
+383,CUS00383,Ngô Ngọc Bình,Male,1973-12-27,910000000383,573669535,ng.ngc.bnh.10383@examplebank.vn,"9 Hùng Vương, Huế",Giáo viên,Individual,2025-06-18,Active
+384,CUS00384,Huỳnh Minh Dũng,Female,1974-11-04,100000000384,564247883,hunh.minh.dng.10384@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Business,2024-03-06,Active
+385,CUS00385,Huỳnh Văn Châu,Male,1971-05-23,470000000385,815700118,hunh.vn.chu.10385@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2024-02-16,Active
+386,CUS00386,Phạm Minh Hải,Female,2005-11-07,220000000386,381683243,phm.minh.hi.10386@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2024-09-30,Active
+387,CUS00387,Hồ Xuân Linh,Male,2004-08-06,260000000387,513359206,h.xun.linh.10387@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kinh doanh,Business,2024-07-03,Active
+388,CUS00388,Hồ Minh Hùng,Female,2004-02-26,260000000388,998204605,h.minh.hng.10388@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Individual,2024-03-23,Active
+389,CUS00389,Lê Gia Sơn,Female,1997-02-07,730000000389,824950228,l.gia.sn.10389@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2026-03-27,Active
+390,CUS00390,Dương Thanh Ngân,Female,1989-09-12,200000000390,572520534,dng.thanh.ngn.10390@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-08-04,Active
+391,CUS00391,Huỳnh Anh Lâm,Female,1975-06-28,430000000391,330856790,hunh.anh.lm.10391@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2024-10-05,Active
+392,CUS00392,Phạm Gia Hải,Female,1998-06-06,970000000392,716187527,phm.gia.hi.10392@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2025-01-23,Active
+393,CUS00393,Phan Xuân Tuấn,Male,2003-10-28,600000000393,527457774,phan.xun.tun.10393@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2026-01-03,Active
+394,CUS00394,Phan Kim Linh,Female,2003-04-06,810000000394,335190883,phan.kim.linh.10394@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Individual,2025-11-12,Active
+395,CUS00395,Hồ Kim Nga,Male,1990-06-18,140000000395,519366689,h.kim.nga.10395@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-05-21,Inactive
+396,CUS00396,Võ Thanh Hải,Female,1990-07-19,670000000396,701506410,v.thanh.hi.10396@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Business,2024-06-17,Active
+397,CUS00397,Hoàng Hữu Nam,Male,1981-07-15,760000000397,318411540,hong.hu.nam.10397@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kinh doanh,Business,2025-12-07,Active
+398,CUS00398,Hoàng Thanh Yến,Female,1991-05-10,350000000398,974294862,hong.thanh.yn.10398@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2024-09-03,Active
+399,CUS00399,Vũ Đức Ngân,Female,1993-12-28,680000000399,777268128,v.c.ngn.10399@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Bác sĩ,Individual,2024-05-21,Active
+400,CUS00400,Lê Kim Ngân,Male,1975-10-03,300000000400,785607994,l.kim.ngn.10400@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2025-09-03,Inactive
+401,CUS00401,Hồ Thị Nam,Female,1972-05-24,420000000401,554067378,h.th.nam.10401@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2025-09-29,Active
+402,CUS00402,Trần Kim Giang,Female,1985-09-11,180000000402,352918810,trn.kim.giang.10402@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2025-12-22,Active
+403,CUS00403,Võ Kim Lâm,Male,1995-05-22,440000000403,541785406,v.kim.lm.10403@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2024-04-30,Active
+404,CUS00404,Vũ Văn Phong,Female,1999-05-31,350000000404,532049316,v.vn.phong.10404@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2024-03-16,Inactive
+405,CUS00405,Hồ Hữu Hà,Female,1987-12-28,230000000405,736693421,h.hu.h.10405@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Giáo viên,Individual,2024-03-09,Active
+406,CUS00406,Bùi Gia An,Female,1974-11-16,180000000406,763023591,bi.gia.an.10406@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2024-11-26,Active
+407,CUS00407,Đặng Gia Phúc,Female,1972-11-12,910000000407,796009457,ng.gia.phc.10407@examplebank.vn,"9 Hùng Vương, Huế",Sinh viên,Individual,2024-07-25,Active
+408,CUS00408,Hồ Thị Hòa,Male,1992-10-20,200000000408,314236279,h.th.ha.10408@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2025-10-27,Active
+409,CUS00409,Lê Anh Hùng,Female,1994-01-26,460000000409,327320998,l.anh.hng.10409@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2026-03-20,Active
+410,CUS00410,Võ Gia Hà,Male,2004-01-08,720000000410,390991157,v.gia.h.10410@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2024-01-10,Active
+411,CUS00411,Phan Kim Long,Male,1975-12-27,640000000411,563592849,phan.kim.long.10411@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-09-12,Active
+412,CUS00412,Vũ Đức Linh,Male,2001-10-07,710000000412,374093551,v.c.linh.10412@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2025-11-04,Active
+413,CUS00413,Hoàng Thanh Nga,Male,1979-12-13,270000000413,819087344,hong.thanh.nga.10413@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2026-01-16,Inactive
+414,CUS00414,Phan Đức Hòa,Female,2004-09-12,140000000414,335142975,phan.c.ha.10414@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2024-04-20,Active
+415,CUS00415,Đỗ Văn Phúc,Male,1975-11-15,710000000415,393706169,.vn.phc.10415@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2025-10-20,Active
+416,CUS00416,Đặng Hữu Yến,Male,1999-08-02,210000000416,835951482,ng.hu.yn.10416@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Individual,2024-01-20,Active
+417,CUS00417,Bùi Thanh Ngân,Male,1969-11-26,910000000417,973179339,bi.thanh.ngn.10417@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Công chức,Individual,2025-10-01,Active
+418,CUS00418,Hồ Kim Linh,Female,1997-11-19,650000000418,511145152,h.kim.linh.10418@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2025-10-09,Active
+419,CUS00419,Hồ Quốc Hiếu,Male,2003-12-15,910000000419,500100247,h.quc.hiu.10419@examplebank.vn,"9 Hùng Vương, Huế",Sinh viên,Individual,2025-11-15,Active
+420,CUS00420,Bùi Xuân Vy,Male,1988-06-06,100000000420,869794343,bi.xun.vy.10420@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2024-05-30,Inactive
+421,CUS00421,Huỳnh Hữu Lâm,Female,2004-03-01,520000000421,308489015,hunh.hu.lm.10421@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2024-03-29,Active
+422,CUS00422,Bùi Hữu Mai,Male,1965-02-21,910000000422,703083464,bi.hu.mai.10422@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Individual,2025-10-03,Active
+423,CUS00423,Bùi Kim Dũng,Male,1996-12-08,280000000423,987704089,bi.kim.dng.10423@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2025-04-01,Active
+424,CUS00424,Trần Đức Quân,Male,1974-06-30,310000000424,319093327,trn.c.qun.10424@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Business,2025-01-09,Inactive
+425,CUS00425,Trần Hữu Giang,Male,2000-09-08,980000000425,789766377,trn.hu.giang.10425@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2026-02-03,Active
+426,CUS00426,Ngô Thanh Vy,Female,1970-03-11,470000000426,313519513,ng.thanh.vy.10426@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Individual,2024-12-13,Active
+427,CUS00427,Hoàng Văn Ngân,Female,1984-01-03,500000000427,779165108,hong.vn.ngn.10427@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2024-10-21,Active
+428,CUS00428,Ngô Quốc Mai,Female,1971-07-18,950000000428,353919748,ng.quc.mai.10428@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Công chức,Business,2024-08-17,Active
+429,CUS00429,Nguyễn Gia Giang,Male,2003-10-28,320000000429,872891034,nguyn.gia.giang.10429@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2024-12-15,Inactive
+430,CUS00430,Phan Thị Nam,Male,1996-06-13,800000000430,803780936,phan.th.nam.10430@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Nhân viên văn phòng,Individual,2025-03-14,Active
+431,CUS00431,Hoàng Minh Hải,Male,1981-04-01,830000000431,369194890,hong.minh.hi.10431@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2024-10-30,Active
+432,CUS00432,Trần Ngọc Phúc,Male,1993-02-15,610000000432,502469636,trn.ngc.phc.10432@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2025-11-04,Active
+433,CUS00433,Phan Anh Phúc,Male,1970-05-21,240000000433,316925946,phan.anh.phc.10433@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2025-07-24,Active
+434,CUS00434,Phan Đức Phúc,Male,1969-06-18,510000000434,378547387,phan.c.phc.10434@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Business,2025-04-08,Active
+435,CUS00435,Võ Kim Yến,Male,1973-02-08,860000000435,504305602,v.kim.yn.10435@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2024-11-18,Active
+436,CUS00436,Võ Anh Khánh,Female,1994-07-11,100000000436,539576456,v.anh.khnh.10436@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Business,2024-09-23,Active
+437,CUS00437,Phạm Kim Dũng,Male,1973-06-09,280000000437,782155274,phm.kim.dng.10437@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2025-01-03,Active
+438,CUS00438,Dương Minh Lâm,Female,1995-05-08,640000000438,550796136,dng.minh.lm.10438@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Nhân viên văn phòng,Individual,2024-05-09,Active
+439,CUS00439,Huỳnh Thanh Lâm,Male,1977-02-12,250000000439,915063328,hunh.thanh.lm.10439@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2025-01-19,Active
+440,CUS00440,Phan Quốc Lâm,Male,1988-08-13,490000000440,984578568,phan.quc.lm.10440@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Business,2024-07-10,Active
+441,CUS00441,Lê Gia Vy,Female,1991-07-28,260000000441,705113707,l.gia.vy.10441@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2025-09-17,Active
+442,CUS00442,Bùi Xuân Linh,Female,1980-11-17,690000000442,929579260,bi.xun.linh.10442@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2024-10-11,Active
+443,CUS00443,Ngô Thị Phúc,Male,1969-03-15,310000000443,907548945,ng.th.phc.10443@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2024-04-29,Active
+444,CUS00444,Bùi Hữu Nga,Male,1992-08-24,340000000444,377727988,bi.hu.nga.10444@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2025-09-21,Active
+445,CUS00445,Bùi Ngọc Hạnh,Female,2002-08-27,270000000445,930419368,bi.ngc.hnh.10445@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2024-04-26,Active
+446,CUS00446,Hoàng Anh Hải,Male,1978-09-04,920000000446,980464363,hong.anh.hi.10446@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2025-09-03,Active
+447,CUS00447,Dương Kim Hà,Male,1969-07-19,650000000447,815849072,dng.kim.h.10447@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2025-07-04,Active
+448,CUS00448,Huỳnh Thanh Hà,Male,1984-09-03,940000000448,813438110,hunh.thanh.h.10448@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2025-02-22,Active
+449,CUS00449,Dương Văn Hà,Female,1970-05-01,630000000449,857737859,dng.vn.h.10449@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Business,2026-01-14,Active
+450,CUS00450,Hồ Văn Giang,Male,1999-06-04,970000000450,508450420,h.vn.giang.10450@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-06-18,Active
+451,CUS00451,Đỗ Ngọc Hà,Male,2003-10-07,430000000451,564471761,.ngc.h.10451@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Nhân viên văn phòng,Individual,2025-03-12,Active
+452,CUS00452,Phan Văn Hiếu,Female,1965-10-17,880000000452,500436234,phan.vn.hiu.10452@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Business,2024-08-15,Active
+453,CUS00453,Trần Anh Khánh,Female,1976-01-30,500000000453,310632264,trn.anh.khnh.10453@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Tự do,Individual,2025-06-29,Inactive
+454,CUS00454,Huỳnh Anh Dũng,Male,1979-11-10,560000000454,775622501,hunh.anh.dng.10454@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Business,2024-01-22,Active
+455,CUS00455,Ngô Quốc Hải,Male,1989-07-09,890000000455,734751147,ng.quc.hi.10455@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2024-06-02,Active
+456,CUS00456,Bùi Kim Dũng,Female,1983-10-18,770000000456,971292909,bi.kim.dng.10456@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2024-04-15,Active
+457,CUS00457,Vũ Hữu Nga,Male,1984-08-21,750000000457,853620550,v.hu.nga.10457@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Công chức,Individual,2024-04-26,Active
+458,CUS00458,Võ Anh Hòa,Female,1989-10-08,250000000458,525269218,v.anh.ha.10458@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Business,2025-04-05,Active
+459,CUS00459,Ngô Quốc Nga,Female,1993-05-19,870000000459,739821829,ng.quc.nga.10459@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2024-01-03,Active
+460,CUS00460,Đỗ Anh Hà,Male,1997-06-01,980000000460,892662432,.anh.h.10460@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2024-01-25,Active
+461,CUS00461,Đỗ Kim Linh,Female,1969-03-16,730000000461,548159123,.kim.linh.10461@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2024-08-18,Active
+462,CUS00462,Đặng Quốc Châu,Female,1976-01-02,680000000462,815786308,ng.quc.chu.10462@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Individual,2024-04-21,Active
+463,CUS00463,Hoàng Minh Phúc,Male,2000-07-06,230000000463,973724541,hong.minh.phc.10463@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2024-01-21,Active
+464,CUS00464,Nguyễn Ngọc Sơn,Male,2002-01-02,150000000464,351840223,nguyn.ngc.sn.10464@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-07-10,Active
+465,CUS00465,Dương Hữu Lâm,Male,1969-12-10,380000000465,392033900,dng.hu.lm.10465@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Nhân viên văn phòng,Individual,2026-02-03,Active
+466,CUS00466,Huỳnh Xuân Hà,Female,1993-01-10,460000000466,782432977,hunh.xun.h.10466@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2024-08-21,Active
+467,CUS00467,Huỳnh Minh Lâm,Male,1970-01-29,830000000467,892091334,hunh.minh.lm.10467@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2026-01-13,Active
+468,CUS00468,Huỳnh Minh Vy,Female,1989-08-23,730000000468,955835456,hunh.minh.vy.10468@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Kinh doanh,Business,2025-08-18,Active
+469,CUS00469,Huỳnh Văn Hải,Female,1970-12-29,240000000469,393871485,hunh.vn.hi.10469@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Bác sĩ,Individual,2025-07-16,Active
+470,CUS00470,Nguyễn Kim Giang,Female,1997-11-19,130000000470,837608803,nguyn.kim.giang.10470@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2024-08-10,Active
+471,CUS00471,Đặng Thanh Giang,Male,1998-07-23,770000000471,747460106,ng.thanh.giang.10471@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Nhân viên văn phòng,Individual,2025-12-30,Active
+472,CUS00472,Phan Thanh Quân,Female,1996-10-27,390000000472,892039740,phan.thanh.qun.10472@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-02-04,Active
+473,CUS00473,Võ Xuân Yến,Female,1979-01-19,930000000473,881861106,v.xun.yn.10473@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2025-12-28,Active
+474,CUS00474,Lê Ngọc Dũng,Male,1998-12-08,490000000474,556029557,l.ngc.dng.10474@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Individual,2024-11-25,Active
+475,CUS00475,Hoàng Văn Khánh,Male,1979-02-09,600000000475,797047181,hong.vn.khnh.10475@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2025-09-10,Active
+476,CUS00476,Hoàng Minh Giang,Male,1997-03-25,390000000476,586719576,hong.minh.giang.10476@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2024-05-02,Active
+477,CUS00477,Huỳnh Anh Khánh,Male,2004-12-14,970000000477,829695900,hunh.anh.khnh.10477@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2025-10-31,Active
+478,CUS00478,Vũ Thị Long,Female,1972-03-30,180000000478,753074997,v.th.long.10478@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Công chức,Individual,2024-09-20,Active
+479,CUS00479,Trần Xuân Mai,Female,1982-12-26,620000000479,991389365,trn.xun.mai.10479@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2025-07-18,Active
+480,CUS00480,Nguyễn Xuân Phúc,Male,1971-12-08,230000000480,735828634,nguyn.xun.phc.10480@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Công chức,Business,2025-01-15,Active
+481,CUS00481,Đỗ Thị Lâm,Female,1979-09-30,180000000481,736271459,.th.lm.10481@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2024-11-05,Active
+482,CUS00482,Đặng Văn Phong,Female,2000-06-02,650000000482,822074211,ng.vn.phong.10482@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2024-04-06,Active
+483,CUS00483,Ngô Kim Long,Male,1995-01-15,430000000483,580937134,ng.kim.long.10483@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2026-03-26,Active
+484,CUS00484,Đỗ Thanh Khánh,Male,1990-02-28,860000000484,506639977,.thanh.khnh.10484@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Giáo viên,Individual,2025-08-27,Active
+485,CUS00485,Dương Minh Mai,Female,1976-10-15,760000000485,399866507,dng.minh.mai.10485@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kinh doanh,Business,2024-06-25,Active
+486,CUS00486,Hồ Minh Phong,Female,1974-05-30,340000000486,993333814,h.minh.phong.10486@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2024-12-01,Active
+487,CUS00487,Huỳnh Ngọc Linh,Male,1972-11-20,680000000487,835142666,hunh.ngc.linh.10487@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Business,2025-06-05,Inactive
+488,CUS00488,Trần Hữu An,Male,1987-04-09,890000000488,904502424,trn.hu.an.10488@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2025-09-30,Active
+489,CUS00489,Trần Gia Vy,Female,1965-05-05,570000000489,552639960,trn.gia.vy.10489@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-10-03,Active
+490,CUS00490,Lê Gia Yến,Female,1972-08-24,830000000490,829168851,l.gia.yn.10490@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2025-05-08,Inactive
+491,CUS00491,Phan Gia Nam,Male,1969-06-20,260000000491,915379813,phan.gia.nam.10491@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Kỹ sư,Individual,2025-11-10,Active
+492,CUS00492,Nguyễn Hữu Tuấn,Male,1992-09-22,790000000492,350796716,nguyn.hu.tun.10492@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kinh doanh,Business,2024-08-25,Active
+493,CUS00493,Ngô Quốc Trang,Male,1977-05-03,200000000493,566514512,ng.quc.trang.10493@examplebank.vn,"9 Hùng Vương, Huế",Nhân viên văn phòng,Individual,2025-02-08,Active
+494,CUS00494,Ngô Gia Yến,Male,1987-01-11,120000000494,809063398,ng.gia.yn.10494@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Nhân viên văn phòng,Individual,2025-08-30,Active
+495,CUS00495,Bùi Xuân Phúc,Male,1980-05-18,540000000495,895052165,bi.xun.phc.10495@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Nhân viên văn phòng,Business,2024-02-18,Active
+496,CUS00496,Trần Quốc An,Male,1968-09-29,980000000496,524935274,trn.quc.an.10496@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Individual,2024-08-03,Inactive
+497,CUS00497,Lê Quốc Quân,Male,1991-03-08,850000000497,712744523,l.quc.qun.10497@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2025-09-02,Active
+498,CUS00498,Phạm Xuân Khánh,Female,1972-07-03,140000000498,924689531,phm.xun.khnh.10498@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Business,2024-04-09,Active
+499,CUS00499,Huỳnh Quốc Châu,Female,1971-07-05,500000000499,306725320,hunh.quc.chu.10499@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2025-07-31,Active
+500,CUS00500,Phạm Thị Nga,Female,1995-08-08,650000000500,781040214,phm.th.nga.10500@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Business,2024-04-26,Active
+501,CUS00501,Đặng Văn Hòa,Female,1977-10-04,260000000501,805530484,ng.vn.ha.10501@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Business,2024-01-08,Active
+502,CUS00502,Phan Thị Nga,Male,1982-08-24,480000000502,846989128,phan.th.nga.10502@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Nhân viên văn phòng,Individual,2026-02-06,Active
+503,CUS00503,Ngô Kim Trang,Male,1968-12-13,340000000503,785060800,ng.kim.trang.10503@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Business,2024-12-17,Active
+504,CUS00504,Đỗ Xuân Vy,Male,1971-03-08,840000000504,813158866,.xun.vy.10504@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2025-02-23,Active
+505,CUS00505,Vũ Anh Hùng,Male,1976-11-01,470000000505,338268604,v.anh.hng.10505@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kinh doanh,Business,2024-12-16,Active
+506,CUS00506,Vũ Thanh Hải,Female,1974-05-12,850000000506,953976811,v.thanh.hi.10506@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2024-06-11,Active
+507,CUS00507,Ngô Xuân Nam,Male,1968-01-30,450000000507,813861872,ng.xun.nam.10507@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2025-09-13,Active
+508,CUS00508,Vũ Hữu Nam,Female,1970-04-23,800000000508,332343430,v.hu.nam.10508@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Business,2025-06-30,Active
+509,CUS00509,Phạm Anh Hải,Female,1988-10-03,870000000509,851021185,phm.anh.hi.10509@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2024-10-01,Active
+510,CUS00510,Hoàng Quốc Phong,Female,1969-07-18,380000000510,741267201,hong.quc.phong.10510@examplebank.vn,"9 Hùng Vương, Huế",Công chức,Individual,2025-08-31,Active
+511,CUS00511,Phạm Minh Hùng,Male,1979-11-26,680000000511,596409817,phm.minh.hng.10511@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Sinh viên,Business,2024-09-15,Active
+512,CUS00512,Đặng Văn Mai,Male,1967-01-11,120000000512,962257708,ng.vn.mai.10512@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Business,2026-01-04,Active
+513,CUS00513,Huỳnh Ngọc Hiếu,Female,1985-07-31,110000000513,733568842,hunh.ngc.hiu.10513@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Sinh viên,Individual,2025-01-28,Active
+514,CUS00514,Ngô Quốc Quân,Female,1966-05-22,410000000514,979371969,ng.quc.qun.10514@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Công chức,Business,2025-07-08,Inactive
+515,CUS00515,Lê Anh Quân,Female,1991-06-06,630000000515,730536449,l.anh.qun.10515@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Giáo viên,Individual,2025-05-29,Active
+516,CUS00516,Vũ Hữu Giang,Female,1992-12-25,810000000516,532700250,v.hu.giang.10516@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2024-08-21,Active
+517,CUS00517,Bùi Văn Bình,Female,2004-06-01,460000000517,967102915,bi.vn.bnh.10517@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2024-08-01,Active
+518,CUS00518,Vũ Gia Hạnh,Female,2005-07-23,220000000518,795148817,v.gia.hnh.10518@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2025-10-18,Active
+519,CUS00519,Phạm Anh Hòa,Female,1989-06-26,330000000519,878056563,phm.anh.ha.10519@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Giáo viên,Individual,2025-04-06,Active
+520,CUS00520,Phan Đức An,Female,1968-12-19,270000000520,997536880,phan.c.an.10520@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Bác sĩ,Individual,2024-02-11,Active
+521,CUS00521,Nguyễn Đức Vy,Male,1968-10-19,170000000521,786302430,nguyn.c.vy.10521@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Sinh viên,Individual,2025-12-15,Active
+522,CUS00522,Lê Ngọc Trang,Male,2005-02-24,960000000522,533904610,l.ngc.trang.10522@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2024-07-30,Active
+523,CUS00523,Phạm Thị Mai,Female,1982-07-12,170000000523,324128264,phm.th.mai.10523@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Business,2026-02-24,Active
+524,CUS00524,Nguyễn Minh Giang,Male,1986-05-12,710000000524,721532374,nguyn.minh.giang.10524@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Bác sĩ,Individual,2024-09-22,Active
+525,CUS00525,Vũ Thị Ngân,Female,1966-07-13,920000000525,949318401,v.th.ngn.10525@examplebank.vn,"9 Hùng Vương, Huế",Kinh doanh,Business,2024-01-18,Active
+526,CUS00526,Võ Thanh Nam,Male,1980-10-13,930000000526,937727339,v.thanh.nam.10526@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Công chức,Individual,2024-09-28,Active
+527,CUS00527,Đặng Hữu Hà,Female,1970-10-22,990000000527,755580072,ng.hu.h.10527@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kỹ sư,Individual,2026-02-26,Active
+528,CUS00528,Vũ Gia Tuấn,Male,2005-05-13,320000000528,874061807,v.gia.tun.10528@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2025-01-02,Inactive
+529,CUS00529,Trần Kim Long,Male,1973-10-12,420000000529,842218815,trn.kim.long.10529@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2024-07-25,Active
+530,CUS00530,Dương Văn Khánh,Female,1973-04-25,970000000530,948543651,dng.vn.khnh.10530@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2024-04-21,Active
+531,CUS00531,Phan Thị Ngân,Female,1969-07-12,250000000531,826329927,phan.th.ngn.10531@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2024-07-16,Active
+532,CUS00532,Hoàng Thị Nga,Female,1982-11-28,890000000532,358599604,hong.th.nga.10532@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kinh doanh,Business,2025-01-09,Active
+533,CUS00533,Lê Quốc Nga,Male,1987-02-21,190000000533,997709956,l.quc.nga.10533@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Kỹ sư,Individual,2024-04-06,Active
+534,CUS00534,Lê Anh Trang,Male,1987-04-12,740000000534,564389007,l.anh.trang.10534@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2024-06-10,Active
+535,CUS00535,Bùi Hữu Trang,Male,1982-05-14,580000000535,544148931,bi.hu.trang.10535@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Bác sĩ,Individual,2026-01-19,Active
+536,CUS00536,Phạm Thị Ngân,Female,1998-07-13,780000000536,908820042,phm.th.ngn.10536@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Individual,2024-12-18,Active
+537,CUS00537,Dương Quốc Hòa,Female,1994-07-01,250000000537,309278884,dng.quc.ha.10537@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Tự do,Individual,2025-09-09,Inactive
+538,CUS00538,Hoàng Hữu Hạnh,Female,1996-04-20,790000000538,913494098,hong.hu.hnh.10538@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2025-02-19,Active
+539,CUS00539,Phạm Thị Khánh,Male,1996-04-29,660000000539,890825390,phm.th.khnh.10539@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2024-02-25,Active
+540,CUS00540,Phan Đức Bình,Female,1973-04-10,940000000540,856079973,phan.c.bnh.10540@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2024-11-15,Active
+541,CUS00541,Phạm Văn Hùng,Female,2000-02-09,170000000541,359929547,phm.vn.hng.10541@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2025-11-05,Active
+542,CUS00542,Vũ Kim Hạnh,Female,2000-11-13,970000000542,702533636,v.kim.hnh.10542@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Sinh viên,Individual,2024-01-24,Active
+543,CUS00543,Bùi Gia Yến,Female,1985-10-04,120000000543,800365450,bi.gia.yn.10543@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Giáo viên,Individual,2024-10-04,Inactive
+544,CUS00544,Lê Anh Tuấn,Female,1970-09-16,390000000544,516010685,l.anh.tun.10544@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Business,2025-02-07,Active
+545,CUS00545,Nguyễn Kim Hiếu,Female,1989-03-30,150000000545,921510258,nguyn.kim.hiu.10545@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2024-01-26,Active
+546,CUS00546,Dương Anh Giang,Female,1980-01-11,620000000546,749610990,dng.anh.giang.10546@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2025-05-22,Active
+547,CUS00547,Đỗ Kim Nam,Male,1981-12-29,840000000547,361769995,.kim.nam.10547@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2025-06-18,Active
+548,CUS00548,Ngô Ngọc Vy,Female,1979-03-21,440000000548,582227347,ng.ngc.vy.10548@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kỹ sư,Individual,2026-01-03,Active
+549,CUS00549,Đỗ Thanh Khánh,Male,2006-01-11,560000000549,864458157,.thanh.khnh.10549@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Bác sĩ,Business,2025-06-30,Active
+550,CUS00550,Lê Xuân Hiếu,Female,1970-04-17,200000000550,849567880,l.xun.hiu.10550@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kỹ sư,Individual,2025-06-14,Active
+551,CUS00551,Đỗ Đức Trang,Male,2002-05-28,650000000551,369189934,.c.trang.10551@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kinh doanh,Business,2024-07-15,Active
+552,CUS00552,Huỳnh Gia Ngân,Male,1968-04-23,550000000552,896747777,hunh.gia.ngn.10552@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Kỹ sư,Individual,2024-06-16,Active
+553,CUS00553,Đặng Xuân Khánh,Female,1984-09-03,320000000553,972724055,ng.xun.khnh.10553@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-08-12,Active
+554,CUS00554,Huỳnh Minh Giang,Female,1988-04-15,450000000554,983312421,hunh.minh.giang.10554@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Tự do,Individual,2024-11-23,Inactive
+555,CUS00555,Dương Quốc Quân,Male,1974-04-12,800000000555,970995708,dng.quc.qun.10555@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Individual,2024-08-07,Active
+556,CUS00556,Đặng Thanh Trang,Male,2002-04-12,680000000556,797918401,ng.thanh.trang.10556@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Tự do,Individual,2026-03-20,Active
+557,CUS00557,Huỳnh Thị Trang,Female,1972-01-12,740000000557,726577394,hunh.th.trang.10557@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Giáo viên,Individual,2024-04-25,Active
+558,CUS00558,Bùi Hữu Bình,Male,1991-04-21,580000000558,562187218,bi.hu.bnh.10558@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Kinh doanh,Business,2025-01-17,Active
+559,CUS00559,Vũ Ngọc Phong,Male,1983-10-05,980000000559,766235988,v.ngc.phong.10559@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2024-10-03,Active
+560,CUS00560,Hồ Hữu Lâm,Female,1978-04-03,220000000560,518729361,h.hu.lm.10560@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2025-07-08,Inactive
+561,CUS00561,Trần Gia Sơn,Female,2002-09-08,720000000561,942258707,trn.gia.sn.10561@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2024-07-17,Active
+562,CUS00562,Phan Đức Linh,Male,1977-01-14,720000000562,538345126,phan.c.linh.10562@examplebank.vn,"9 Hùng Vương, Huế",Giáo viên,Individual,2025-02-08,Active
+563,CUS00563,Nguyễn Kim An,Female,2005-12-02,550000000563,900259837,nguyn.kim.an.10563@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2024-05-20,Active
+564,CUS00564,Huỳnh Thanh Hải,Male,1966-08-15,120000000564,913413272,hunh.thanh.hi.10564@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2025-01-21,Active
+565,CUS00565,Bùi Thanh Giang,Male,1968-04-25,740000000565,807590538,bi.thanh.giang.10565@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Tự do,Individual,2024-05-11,Active
+566,CUS00566,Võ Kim An,Female,1974-02-03,220000000566,795342422,v.kim.an.10566@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Kinh doanh,Business,2025-03-01,Active
+567,CUS00567,Đỗ Thanh Khánh,Female,1975-01-20,830000000567,332356389,.thanh.khnh.10567@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kỹ sư,Individual,2024-06-17,Active
+568,CUS00568,Ngô Đức Ngân,Male,1983-02-01,880000000568,858704478,ng.c.ngn.10568@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Sinh viên,Individual,2024-05-10,Active
+569,CUS00569,Đặng Thanh An,Female,1989-06-22,730000000569,792445779,ng.thanh.an.10569@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2024-11-21,Active
+570,CUS00570,Lê Văn Hà,Male,1973-11-08,660000000570,304184753,l.vn.h.10570@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Tự do,Individual,2024-07-07,Active
+571,CUS00571,Đỗ Hữu Hiếu,Female,1990-04-17,930000000571,515267524,.hu.hiu.10571@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Giáo viên,Individual,2025-05-15,Inactive
+572,CUS00572,Ngô Minh Hà,Male,1979-04-03,630000000572,510931653,ng.minh.h.10572@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Sinh viên,Individual,2026-01-06,Active
+573,CUS00573,Lê Thị Khánh,Female,1993-03-17,110000000573,528853642,l.th.khnh.10573@examplebank.vn,"77 Trần Phú, Nha Trang, Khánh Hòa",Kinh doanh,Business,2024-12-17,Active
+574,CUS00574,Trần Kim Hải,Female,1990-04-15,230000000574,575737528,trn.kim.hi.10574@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Công chức,Individual,2024-10-04,Active
+575,CUS00575,Hồ Quốc Hải,Male,1972-05-24,700000000575,338054635,h.quc.hi.10575@examplebank.vn,"45 Nguyễn Huệ, Quận 1, TP.HCM",Kỹ sư,Individual,2024-08-15,Active
+576,CUS00576,Phan Thanh Sơn,Female,2002-08-15,760000000576,758899878,phan.thanh.sn.10576@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Công chức,Individual,2025-07-05,Active
+577,CUS00577,Bùi Thị Nga,Male,1966-02-19,560000000577,873468913,bi.th.nga.10577@examplebank.vn,"9 Hùng Vương, Huế",Sinh viên,Individual,2025-06-24,Active
+578,CUS00578,Võ Quốc An,Female,1969-03-22,570000000578,750266397,v.quc.an.10578@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Tự do,Individual,2025-04-27,Active
+579,CUS00579,Ngô Văn Sơn,Female,1972-10-18,700000000579,980081781,ng.vn.sn.10579@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Bác sĩ,Individual,2025-12-07,Active
+580,CUS00580,Nguyễn Đức Phúc,Male,2003-06-26,790000000580,791608837,nguyn.c.phc.10580@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Giáo viên,Business,2025-05-03,Active
+581,CUS00581,Phan Thanh Yến,Male,2002-01-04,740000000581,570421517,phan.thanh.yn.10581@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Sinh viên,Individual,2024-04-10,Active
+582,CUS00582,Huỳnh Thị Hùng,Female,1968-12-15,240000000582,310360106,hunh.th.hng.10582@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Công chức,Individual,2024-05-13,Active
+583,CUS00583,Phạm Anh Yến,Female,1967-05-24,580000000583,711321812,phm.anh.yn.10583@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Công chức,Individual,2024-07-25,Active
+584,CUS00584,Huỳnh Xuân Khánh,Female,2002-03-18,900000000584,508352738,hunh.xun.khnh.10584@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Tự do,Individual,2026-03-23,Active
+585,CUS00585,Võ Ngọc Yến,Male,1976-08-01,370000000585,829564435,v.ngc.yn.10585@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Sinh viên,Individual,2024-05-20,Active
+586,CUS00586,Bùi Gia An,Female,1980-01-06,530000000586,313157465,bi.gia.an.10586@examplebank.vn,"101 Bạch Đằng, Hải Châu, Đà Nẵng",Bác sĩ,Individual,2025-10-16,Active
+587,CUS00587,Ngô Quốc Hiếu,Female,1995-06-10,610000000587,709299142,ng.quc.hiu.10587@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Bác sĩ,Business,2025-06-08,Active
+588,CUS00588,Võ Minh Hòa,Male,1990-06-24,270000000588,567007133,v.minh.ha.10588@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Công chức,Individual,2026-03-25,Active
+589,CUS00589,Phạm Minh Hòa,Male,1975-08-06,360000000589,802683434,phm.minh.ha.10589@examplebank.vn,"16 Hòa Bình, Ninh Kiều, Cần Thơ",Bác sĩ,Individual,2024-05-04,Active
+590,CUS00590,Bùi Thanh Yến,Male,1982-05-22,260000000590,771788743,bi.thanh.yn.10590@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Kỹ sư,Individual,2025-01-12,Active
+591,CUS00591,Đỗ Xuân An,Male,1981-07-23,560000000591,750530240,.xun.an.10591@examplebank.vn,"22 Điện Biên Phủ, Hồng Bàng, Hải Phòng",Tự do,Individual,2024-10-03,Active
+592,CUS00592,Phan Hữu Hà,Female,1978-12-15,590000000592,809416840,phan.hu.h.10592@examplebank.vn,"9 Hùng Vương, Huế",Kỹ sư,Individual,2024-08-22,Active
+593,CUS00593,Hồ Văn Hà,Female,1995-10-15,680000000593,349473266,h.vn.h.10593@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Công chức,Business,2024-07-18,Active
+594,CUS00594,Đỗ Gia Nga,Male,1984-01-09,780000000594,880097256,.gia.nga.10594@examplebank.vn,"88 Lê Lợi, Vinh, Nghệ An",Công chức,Individual,2024-06-22,Active
+595,CUS00595,Hoàng Văn Dũng,Female,1967-04-01,860000000595,723285130,hong.vn.dng.10595@examplebank.vn,"15 Trần Hưng Đạo, Hạ Long, Quảng Ninh",Giáo viên,Individual,2025-12-15,Active
+596,CUS00596,Đặng Thị Khánh,Male,1972-11-11,200000000596,907642962,ng.th.khnh.10596@examplebank.vn,"12 Tràng Thi, Hoàn Kiếm, Hà Nội",Công chức,Individual,2025-09-07,Active
+597,CUS00597,Huỳnh Văn Giang,Female,1987-12-30,200000000597,797409268,hunh.vn.giang.10597@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Individual,2024-06-06,Inactive
+598,CUS00598,Đặng Anh Hòa,Male,1996-02-22,160000000598,752926150,ng.anh.ha.10598@examplebank.vn,"5 Đại lộ Bình Dương, Thủ Dầu Một, Bình Dương",Bác sĩ,Business,2026-03-09,Active
+599,CUS00599,Hoàng Anh An,Male,2000-01-31,630000000599,524760272,hong.anh.an.10599@examplebank.vn,"9 Hùng Vương, Huế",Tự do,Individual,2024-11-17,Active
+600,CUS00600,Ngô Đức Ngân,Female,1986-05-03,810000000600,333818451,ng.c.ngn.10600@examplebank.vn,"9 Hùng Vương, Huế",Bác sĩ,Individual,2025-05-25,Active

@@ -1,0 +1,5 @@
+LoanTypeID,LoanTypeName,MaxAmount,DefaultInterestRate,MaxTermMonths,Description
+1,Personal Loan,300000000,0.12,60,Vay tiêu dùng
+2,Home Loan,3000000000,0.1,240,Vay mua nhà
+3,Auto Loan,800000000,0.11,84,Vay mua xe
+4,Education Loan,500000000,0.08,72,Vay du học/học tập

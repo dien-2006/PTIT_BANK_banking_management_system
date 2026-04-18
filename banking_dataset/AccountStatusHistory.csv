@@ -1,0 +1,156 @@
+HistoryID,AccountID,OldStatus,NewStatus,ChangedDate,ChangedByType,EmployeeID,Reason
+1,716,Active,Inactive,2026-03-23 20:22:52,Customer,,YC khách hàng
+2,606,Active,Blocked,2025-04-21 02:17:33,System,,Không hoạt động lâu
+3,121,Active,Closed,2026-02-09 08:02:04,Customer,,Đóng tài khoản
+4,209,Inactive,Active,2025-11-20 01:41:12,Customer,,YC khách hàng
+5,381,Active,Closed,2026-03-11 14:38:58,Customer,,YC khách hàng
+6,818,Active,Blocked,2026-02-25 08:45:02,Employee,42,Xác minh hoàn tất
+7,576,Blocked,Active,2026-01-06 14:42:11,Customer,,Đóng tài khoản
+8,267,Active,Closed,2025-05-23 16:18:33,Customer,,Đóng tài khoản
+9,558,Active,Blocked,2025-02-21 11:29:25,Customer,,Đóng tài khoản
+10,827,Active,Inactive,2026-03-19 12:36:34,System,,Nghi ngờ gian lận
+11,581,Inactive,Active,2024-12-05 19:51:08,System,,Không hoạt động lâu
+12,328,Active,Blocked,2025-08-16 02:16:20,Employee,46,Xác minh hoàn tất
+13,624,Active,Blocked,2026-03-01 14:46:58,System,,Nghi ngờ gian lận
+14,366,Active,Inactive,2026-03-15 21:11:20,Customer,,Đóng tài khoản
+15,766,Active,Closed,2025-11-16 09:07:25,System,,Không hoạt động lâu
+16,199,Blocked,Active,2026-03-30 18:32:16,Customer,,Đóng tài khoản
+17,457,Inactive,Active,2026-03-23 05:32:07,Employee,35,Xác minh hoàn tất
+18,466,Inactive,Active,2026-02-27 07:40:21,Customer,,YC khách hàng
+19,312,Blocked,Active,2025-07-22 13:02:38,System,,Không hoạt động lâu
+20,332,Active,Closed,2025-09-24 20:50:27,Customer,,Đóng tài khoản
+21,394,Active,Closed,2026-03-29 03:41:45,System,,Không hoạt động lâu
+22,635,Inactive,Active,2025-05-24 16:27:56,Employee,4,Xác minh hoàn tất
+23,790,Active,Blocked,2025-11-13 07:07:54,Employee,49,Xác minh hoàn tất
+24,745,Active,Inactive,2025-05-17 22:36:39,Customer,,YC khách hàng
+25,853,Active,Blocked,2026-03-19 04:57:41,Customer,,YC khách hàng
+26,138,Blocked,Active,2026-02-03 03:20:55,Customer,,Đóng tài khoản
+27,811,Active,Inactive,2025-06-08 08:01:29,Customer,,YC khách hàng
+28,441,Active,Closed,2026-03-26 04:53:18,System,,Không hoạt động lâu
+29,861,Blocked,Active,2026-02-08 15:04:26,Customer,,Đóng tài khoản
+30,433,Active,Blocked,2025-12-24 19:59:31,Customer,,Đóng tài khoản
+31,297,Active,Blocked,2026-01-17 03:32:56,System,,Nghi ngờ gian lận
+32,522,Active,Inactive,2025-06-12 15:47:54,System,,Không hoạt động lâu
+33,676,Blocked,Active,2026-03-30 08:13:18,Employee,47,Xác minh hoàn tất
+34,293,Inactive,Active,2026-03-24 20:10:22,System,,Nghi ngờ gian lận
+35,137,Active,Blocked,2026-02-09 19:36:57,Customer,,Đóng tài khoản
+36,529,Blocked,Active,2026-03-19 12:27:31,System,,Nghi ngờ gian lận
+37,659,Active,Closed,2026-03-05 13:30:57,Customer,,Đóng tài khoản
+38,97,Inactive,Active,2026-01-16 11:37:10,Customer,,YC khách hàng
+39,291,Active,Blocked,2025-04-29 11:20:52,Customer,,Đóng tài khoản
+40,694,Active,Blocked,2026-03-24 00:17:31,System,,Không hoạt động lâu
+41,40,Active,Closed,2026-03-02 10:08:29,Customer,,Đóng tài khoản
+42,68,Active,Closed,2026-01-07 18:03:10,System,,Không hoạt động lâu
+43,839,Inactive,Active,2026-02-17 04:52:40,System,,Không hoạt động lâu
+44,329,Blocked,Active,2026-03-22 18:44:49,Customer,,YC khách hàng
+45,266,Active,Closed,2026-02-20 00:43:41,System,,Nghi ngờ gian lận
+46,31,Active,Inactive,2026-03-23 21:37:33,System,,Không hoạt động lâu
+47,361,Active,Inactive,2026-03-02 16:42:13,System,,Không hoạt động lâu
+48,849,Inactive,Active,2025-09-22 16:24:27,Employee,24,Xác minh hoàn tất
+49,666,Active,Inactive,2025-12-05 05:04:36,Employee,15,Xác minh hoàn tất
+50,762,Active,Closed,2025-03-15 08:52:48,Customer,,YC khách hàng
+51,641,Active,Blocked,2025-12-31 17:20:19,System,,Không hoạt động lâu
+52,307,Blocked,Active,2026-03-25 01:20:56,Customer,,YC khách hàng
+53,351,Inactive,Active,2026-03-04 15:16:54,Customer,,YC khách hàng
+54,500,Active,Blocked,2024-06-10 15:53:41,Customer,,YC khách hàng
+55,602,Blocked,Active,2026-03-19 16:31:31,System,,Nghi ngờ gian lận
+56,443,Active,Inactive,2026-03-23 14:59:26,Customer,,Đóng tài khoản
+57,570,Active,Inactive,2026-02-24 17:10:26,Employee,8,Xác minh hoàn tất
+58,175,Active,Blocked,2026-02-16 02:07:29,System,,Nghi ngờ gian lận
+59,245,Active,Closed,2025-10-23 06:51:06,Customer,,YC khách hàng
+60,24,Active,Blocked,2025-04-04 20:34:02,Customer,,YC khách hàng
+61,261,Inactive,Active,2026-01-25 00:34:48,System,,Không hoạt động lâu
+62,644,Inactive,Active,2025-11-30 14:09:13,System,,Nghi ngờ gian lận
+63,395,Active,Closed,2025-11-16 03:10:37,System,,Nghi ngờ gian lận
+64,67,Active,Inactive,2026-03-20 11:15:22,Employee,40,Xác minh hoàn tất
+65,169,Inactive,Active,2025-03-27 11:29:50,Employee,9,Xác minh hoàn tất
+66,789,Active,Inactive,2025-12-20 11:21:38,Employee,5,Xác minh hoàn tất
+67,513,Blocked,Active,2026-02-22 19:22:59,Employee,5,Xác minh hoàn tất
+68,618,Active,Inactive,2025-12-24 07:42:47,Customer,,YC khách hàng
+69,674,Active,Blocked,2025-08-17 16:14:15,System,,Nghi ngờ gian lận
+70,859,Inactive,Active,2025-05-20 19:59:35,Customer,,YC khách hàng
+71,671,Inactive,Active,2026-03-06 23:36:13,Employee,4,Xác minh hoàn tất
+72,111,Active,Inactive,2026-02-27 09:08:19,System,,Không hoạt động lâu
+73,87,Active,Blocked,2026-01-06 20:15:25,Customer,,YC khách hàng
+74,295,Inactive,Active,2025-09-24 20:58:04,System,,Không hoạt động lâu
+75,140,Blocked,Active,2026-02-28 01:40:13,Customer,,YC khách hàng
+76,707,Active,Inactive,2025-07-20 15:21:40,Customer,,YC khách hàng
+77,474,Active,Blocked,2026-03-31 18:27:04,System,,Không hoạt động lâu
+78,496,Blocked,Active,2026-03-23 12:13:31,Employee,3,Xác minh hoàn tất
+79,650,Blocked,Active,2025-10-10 07:05:00,System,,Không hoạt động lâu
+80,64,Active,Inactive,2026-03-27 05:10:06,Customer,,Đóng tài khoản
+81,828,Active,Blocked,2026-02-01 09:33:54,Employee,2,Xác minh hoàn tất
+82,213,Active,Closed,2026-01-23 05:54:51,Customer,,YC khách hàng
+83,819,Inactive,Active,2025-11-14 09:53:59,Employee,40,Xác minh hoàn tất
+84,66,Active,Closed,2026-03-30 23:28:57,Customer,,Đóng tài khoản
+85,754,Active,Blocked,2024-11-15 06:59:06,System,,Nghi ngờ gian lận
+86,778,Active,Closed,2025-06-19 06:58:43,Customer,,YC khách hàng
+87,79,Active,Closed,2026-03-22 15:40:16,System,,Nghi ngờ gian lận
+88,228,Active,Closed,2025-06-22 22:05:47,System,,Không hoạt động lâu
+89,212,Active,Blocked,2026-03-15 05:50:02,Employee,4,Xác minh hoàn tất
+90,232,Blocked,Active,2026-03-08 15:22:44,Employee,29,Xác minh hoàn tất
+91,287,Active,Closed,2025-10-09 09:59:56,Employee,20,Xác minh hoàn tất
+92,555,Blocked,Active,2026-03-31 11:45:06,System,,Nghi ngờ gian lận
+93,339,Active,Closed,2026-03-23 17:12:37,System,,Nghi ngờ gian lận
+94,711,Active,Blocked,2026-02-25 02:35:42,System,,Nghi ngờ gian lận
+95,678,Active,Inactive,2026-03-23 22:01:21,Employee,3,Xác minh hoàn tất
+96,50,Active,Closed,2026-01-26 13:51:56,System,,Không hoạt động lâu
+97,523,Blocked,Active,2026-02-28 14:53:37,Employee,1,Xác minh hoàn tất
+98,634,Active,Inactive,2025-05-09 20:57:45,Customer,,YC khách hàng
+99,569,Active,Closed,2025-11-20 04:39:18,Customer,,Đóng tài khoản
+100,658,Inactive,Active,2025-11-23 18:59:01,System,,Nghi ngờ gian lận
+101,667,Active,Closed,2026-03-30 09:33:05,System,,Nghi ngờ gian lận
+102,858,Active,Closed,2026-03-19 09:29:22,System,,Không hoạt động lâu
+103,686,Blocked,Active,2025-06-28 14:05:24,System,,Nghi ngờ gian lận
+104,704,Blocked,Active,2026-01-09 21:33:56,System,,Không hoạt động lâu
+105,34,Blocked,Active,2026-01-12 19:40:19,Employee,39,Xác minh hoàn tất
+106,32,Blocked,Active,2026-03-31 15:12:12,System,,Nghi ngờ gian lận
+107,550,Active,Closed,2026-03-29 00:52:48,Customer,,Đóng tài khoản
+108,607,Active,Inactive,2025-12-26 13:34:37,Customer,,YC khách hàng
+109,482,Blocked,Active,2026-02-28 15:59:01,System,,Không hoạt động lâu
+110,690,Blocked,Active,2026-03-01 06:54:30,Customer,,Đóng tài khoản
+111,77,Active,Blocked,2026-02-27 05:29:21,System,,Nghi ngờ gian lận
+112,248,Active,Closed,2026-02-03 16:52:23,Employee,24,Xác minh hoàn tất
+113,480,Active,Inactive,2026-01-08 01:09:10,Customer,,YC khách hàng
+114,282,Active,Inactive,2026-03-29 01:40:27,Customer,,YC khách hàng
+115,110,Active,Closed,2026-03-05 14:44:33,System,,Nghi ngờ gian lận
+116,73,Active,Closed,2026-03-29 20:42:45,Employee,14,Xác minh hoàn tất
+117,78,Active,Blocked,2025-05-25 20:04:04,Customer,,Đóng tài khoản
+118,840,Active,Blocked,2026-03-26 06:56:20,Customer,,Đóng tài khoản
+119,545,Active,Closed,2025-12-20 21:57:28,System,,Không hoạt động lâu
+120,83,Active,Blocked,2025-06-09 16:32:16,Customer,,Đóng tài khoản
+121,544,Active,Closed,2026-03-29 00:52:29,System,,Không hoạt động lâu
+122,358,Active,Inactive,2024-12-03 07:53:59,Customer,,YC khách hàng
+123,502,Active,Blocked,2025-09-05 08:57:29,Customer,,Đóng tài khoản
+124,517,Active,Blocked,2025-12-13 08:20:52,System,,Nghi ngờ gian lận
+125,454,Active,Inactive,2025-06-20 23:11:03,Customer,,YC khách hàng
+126,384,Active,Inactive,2025-10-05 12:30:07,Employee,16,Xác minh hoàn tất
+127,378,Active,Closed,2025-12-30 08:50:22,Employee,30,Xác minh hoàn tất
+128,857,Active,Blocked,2026-03-25 12:03:48,Customer,,Đóng tài khoản
+129,303,Active,Blocked,2026-01-11 16:21:11,System,,Không hoạt động lâu
+130,347,Blocked,Active,2025-04-09 13:50:47,Employee,4,Xác minh hoàn tất
+131,6,Blocked,Active,2025-09-25 04:58:40,Employee,19,Xác minh hoàn tất
+132,55,Inactive,Active,2026-03-18 02:11:18,Customer,,YC khách hàng
+133,425,Inactive,Active,2026-03-20 06:42:04,System,,Không hoạt động lâu
+134,292,Inactive,Active,2025-12-25 05:07:40,Employee,2,Xác minh hoàn tất
+135,276,Active,Blocked,2026-02-15 21:45:01,System,,Không hoạt động lâu
+136,98,Active,Inactive,2026-03-26 14:59:37,Customer,,Đóng tài khoản
+137,689,Active,Inactive,2026-03-08 17:28:19,System,,Nghi ngờ gian lận
+138,826,Blocked,Active,2025-04-08 20:14:02,Employee,24,Xác minh hoàn tất
+139,445,Active,Closed,2025-07-22 02:46:28,System,,Không hoạt động lâu
+140,616,Active,Inactive,2026-01-31 15:00:14,System,,Nghi ngờ gian lận
+141,508,Active,Blocked,2025-12-28 06:12:09,Customer,,YC khách hàng
+142,85,Active,Closed,2025-02-13 03:43:52,System,,Nghi ngờ gian lận
+143,11,Inactive,Active,2026-01-08 13:13:35,Customer,,YC khách hàng
+144,654,Active,Closed,2026-03-26 09:46:54,Customer,,YC khách hàng
+145,333,Inactive,Active,2026-02-24 02:37:15,System,,Không hoạt động lâu
+146,673,Blocked,Active,2026-03-18 08:49:41,Employee,43,Xác minh hoàn tất
+147,119,Active,Blocked,2026-01-29 07:07:31,System,,Không hoạt động lâu
+148,260,Active,Blocked,2026-02-27 12:26:54,System,,Không hoạt động lâu
+149,255,Active,Closed,2025-04-18 21:45:11,Customer,,YC khách hàng
+150,30,Active,Inactive,2026-03-07 15:11:22,Customer,,Đóng tài khoản
+151,211,Blocked,Active,2025-12-09 00:38:54,Customer,,Đóng tài khoản
+152,382,Blocked,Active,2026-02-09 16:26:09,Customer,,YC khách hàng
+153,214,Inactive,Active,2026-01-11 06:02:45,Customer,,Đóng tài khoản
+154,798,Blocked,Active,2025-12-27 12:09:32,System,,Nghi ngờ gian lận
+155,82,Active,Inactive,2026-03-29 02:23:50,System,,Nghi ngờ gian lận

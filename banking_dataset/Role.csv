@@ -1,0 +1,5 @@
+RoleID,RoleName,Description
+1,Admin,Quản trị hệ thống
+2,Teller,Giao dịch viên
+3,Loan Officer,Nhân viên tín dụng
+4,Manager,Quản lý chi nhánh

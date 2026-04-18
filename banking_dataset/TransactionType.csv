@@ -1,0 +1,6 @@
+TransactionTypeID,TypeName,Description
+1,Deposit,Nạp tiền
+2,Withdraw,Rút tiền
+3,Transfer,Chuyển khoản
+4,BillPayment,Thanh toán hóa đơn
+5,LoanPayment,Thanh toán khoản vay

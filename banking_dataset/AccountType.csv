@@ -1,0 +1,4 @@
+AccountTypeID,TypeName,MinBalance,InterestRate,Description
+1,Checking,50000,0.0,Tài khoản thanh toán
+2,Savings,500000,0.04,Tài khoản tiết kiệm
+3,Business,1000000,0.0,Tài khoản doanh nghiệp cá thể
