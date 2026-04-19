@@ -306,7 +306,7 @@ export class BankingRepository extends SqlRepository {
       return {
         recordset: await this.executeQuery(
           `
-          SELECT TOP 50
+          SELECT
             TransactionID,
             TransactionCode,
             TransactionTypeName,
