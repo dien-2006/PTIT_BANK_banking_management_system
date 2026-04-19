@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { apiRequest } from "./api/client";
 import { Shell } from "./components/layout/shell";
-import { LoginPage } from "./pages/login-page";
 import { AccountsPage } from "./pages/accounts-page";
 import { CardsPage } from "./pages/cards-page";
 import { CustomersPage } from "./pages/customers-page";
 import { DashboardPage } from "./pages/dashboard-page";
 import { LoansPage } from "./pages/loans-page";
-import { OperationsPage } from "./pages/operations-page";
+import { LoginPage } from "./pages/login-page";
+import { ReportsPage } from "./pages/reports-page";
 import { TransactionsPage } from "./pages/transactions-page";
-import { WorkspacePage } from "./pages/workspace-page";
 import type { NavItem, Session } from "./types";
 
 const NAV_ITEMS: NavItem[] = [
@@ -76,6 +75,11 @@ function App() {
       setters.push((payload) => setData((current) => ({ ...current, transactions: payload as AppData["transactions"] })));
     }
 
+    if (session.user.role === "Branch Manager") {
+      requests.push(apiRequest("/api/transactions/history", { token }));
+      setters.push((payload) => setData((current) => ({ ...current, transactions: payload as AppData["transactions"] })));
+    }
+
     if (["Admin", "Loan Officer"].includes(session.user.role)) {
       requests.push(apiRequest("/api/loans", { token }));
       setters.push((payload) => setData((current) => ({ ...current, loans: payload as AppData["loans"] })));
@@ -123,42 +127,7 @@ function App() {
         <Route path="/transactions" element={<TransactionsPage token={session.token} rows={data.transactions} onRefresh={loadData} />} />
         <Route path="/cards" element={<CardsPage token={session.token} rows={data.cards} onRefresh={loadData} />} />
         <Route path="/loans" element={<LoansPage token={session.token} rows={data.loans} onRefresh={loadData} />} />
-        <Route
-          path="/reports"
-          element={
-            <WorkspacePage
-              token={session.token}
-              heading="Báo cáo giao dịch"
-              summary="Tra cứu lịch sử giao dịch bằng bộ lọc stored procedure phía máy chủ."
-              rows={data.transactions}
-              filterKeys={["AccountID", "TransactionType", "Description"]}
-              columns={[
-                { key: "TransactionID", header: "Mã GD" },
-                { key: "AccountID", header: "Tài khoản" },
-                { key: "TransactionType", header: "Loại GD" },
-                { key: "Amount", header: "Số tiền (VNĐ)" },
-                { key: "Description", header: "Nội dung" }
-              ]}
-              actions={[
-                {
-                  title: "Lịch sử giao dịch",
-                  endpoint: "/api/transactions/history",
-                  method: "GET",
-                  submitLabel: "Tải báo cáo",
-                  onSuccess: async (payload) => {
-                    setData((current) => ({ ...current, transactions: payload as AppData["transactions"] }));
-                  },
-                  fields: [
-                    { name: "AccountID", label: "Số tài khoản", type: "number" },
-                    { name: "FromDate", label: "Từ ngày", type: "date" },
-                    { name: "ToDate", label: "Đến ngày", type: "date" }
-                  ]
-                }
-              ]}
-              onRefresh={loadData}
-            />
-          }
-        />
+        <Route path="/reports" element={<ReportsPage token={session.token} rows={data.transactions} onRefresh={loadData} />} />
       </Routes>
     </Shell>
   );

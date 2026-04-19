@@ -1,6 +1,28 @@
 import { z } from "zod";
 import { SqlRepository } from "./sql-repository.js";
 
+function normalizeGender(value: string) {
+  const normalized = value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+  if (["male", "nam"].includes(normalized)) {
+    return "Male";
+  }
+
+  if (["female", "nu"].includes(normalized)) {
+    return "Female";
+  }
+
+  if (["other", "khac"].includes(normalized)) {
+    return "Other";
+  }
+
+  return value.trim();
+}
+
 const customerInputSchema = z
   .object({
     FullName: z.string().min(1),
@@ -17,7 +39,7 @@ const customerInputSchema = z
   })
   .transform((data) => ({
     FullName: data.FullName,
-    Gender: data.Gender,
+    Gender: normalizeGender(data.Gender),
     DateOfBirth: data.DateOfBirth,
     NationalID: data.NationalID ?? data.IdentityNumber ?? "",
     Phone: data.Phone ?? data.PhoneNumber ?? "",

@@ -1,6 +1,6 @@
 import type { FormEvent } from "react";
-import { useMemo, useState } from "react";
-import { Plus, Search, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Eye, Plus, Search, X } from "lucide-react";
 import { apiRequest } from "../api/client";
 import { Button } from "../components/ui/button";
 import { Panel } from "../components/ui/panel";
@@ -12,7 +12,34 @@ type AccountsPageProps = {
   onRefresh: () => Promise<void>;
 };
 
-const formFields: Array<{ name: string; label: string; type?: string; placeholder?: string }> = [
+type AccountRow = {
+  AccountID?: number | string;
+  AccountNumber?: string;
+  FullName?: string;
+  AccountTypeName?: string;
+  BranchName?: string;
+  Balance?: number | string;
+  Status?: string;
+  Currency?: string;
+};
+
+type TransactionRow = {
+  TransactionID?: number | string;
+  TransactionType?: string;
+  TransactionTypeName?: string;
+  Amount?: number | string;
+  Description?: string;
+  TransactionDate?: string;
+};
+
+type FormField = {
+  name: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+};
+
+const formFields: FormField[] = [
   { name: "CustomerID", label: "Mã khách hàng", type: "number" },
   { name: "AccountTypeID", label: "Mã loại tài khoản", type: "number" },
   { name: "BranchID", label: "Mã chi nhánh", type: "number" },
@@ -22,10 +49,58 @@ const formFields: Array<{ name: string; label: string; type?: string; placeholde
 
 const PAGE_SIZE = 7;
 
+function getStatusTone(status: string) {
+  switch (status) {
+    case "Active":
+      return "bg-emerald-50 text-emerald-700";
+    case "Blocked":
+      return "bg-amber-50 text-amber-700";
+    case "Inactive":
+      return "bg-slate-100 text-slate-700";
+    default:
+      return "bg-rose-50 text-rose-700";
+  }
+}
+
+function getStatusDescription(status: string) {
+  switch (status) {
+    case "Active":
+      return "Tài khoản đang hoạt động bình thường và có thể giao dịch.";
+    case "Blocked":
+      return "Tài khoản đang bị khóa, cần kiểm tra trước khi thực hiện giao dịch.";
+    case "Inactive":
+      return "Tài khoản đang tạm ngưng hoạt động.";
+    case "Closed":
+      return "Tài khoản đã đóng và không còn khả năng giao dịch.";
+    default:
+      return "Chưa có mô tả trạng thái cho tài khoản này.";
+  }
+}
+
+function formatDateTime(value: string | undefined) {
+  if (!value) {
+    return "--";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("vi-VN", {
+    dateStyle: "short",
+    timeStyle: "short"
+  }).format(date);
+}
+
 export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [selectedAccount, setSelectedAccount] = useState<AccountRow | null>(null);
+  const [activityRows, setActivityRows] = useState<TransactionRow[]>([]);
+  const [activityLoading, setActivityLoading] = useState(false);
+  const [activityError, setActivityError] = useState<string | null>(null);
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -37,7 +112,7 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
     }
 
     return rows.filter((row) =>
-      ["AccountID", "FullName", "AccountTypeName", "Status"].some((key) =>
+      ["AccountID", "AccountNumber", "FullName", "AccountTypeName", "Status"].some((key) =>
         String(row[key] ?? "")
           .toLowerCase()
           .includes(normalized)
@@ -47,6 +122,48 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
 
   const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
   const pageRows = filteredRows.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  useEffect(() => {
+    const accountId = selectedAccount?.AccountID;
+    if (!accountId) {
+      setActivityRows([]);
+      setActivityError(null);
+      return;
+    }
+
+    let isCancelled = false;
+
+    const loadActivity = async () => {
+      setActivityLoading(true);
+      setActivityError(null);
+
+      try {
+        const response = await apiRequest<TransactionRow[]>("/api/transactions/history", {
+          token,
+          query: { AccountID: String(accountId) }
+        });
+
+        if (!isCancelled) {
+          setActivityRows(response.slice(0, 5));
+        }
+      } catch (requestError) {
+        if (!isCancelled) {
+          setActivityRows([]);
+          setActivityError(requestError instanceof Error ? requestError.message : "Không thể tải lịch sử hoạt động");
+        }
+      } finally {
+        if (!isCancelled) {
+          setActivityLoading(false);
+        }
+      }
+    };
+
+    void loadActivity();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [selectedAccount, token]);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -104,7 +221,7 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
         <Panel className="grid min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden px-5 py-4">
           <div>
             <h3 className="font-display text-2xl text-brand-ink">Quản lý tài khoản</h3>
-            <p className="mt-1 text-sm text-brand-ink/60">Tìm kiếm và theo dõi tài khoản khách hàng trong cùng một khung làm việc rõ ràng.</p>
+            <p className="mt-1 text-sm text-brand-ink/60">Tìm kiếm và theo dõi số dư, trạng thái hoạt động và giao dịch gần đây của tài khoản.</p>
           </div>
 
           <div className="mt-2 min-h-0 overflow-auto rounded-3xl border border-brand-red/10">
@@ -114,24 +231,42 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
                   <th className="px-4 py-3 font-medium">Số tài khoản</th>
                   <th className="px-4 py-3 font-medium">Khách hàng</th>
                   <th className="px-4 py-3 font-medium">Loại tài khoản</th>
-                  <th className="px-4 py-3 font-medium">Số dư (VNĐ)</th>
+                  <th className="px-4 py-3 font-medium">Số dư</th>
                   <th className="px-4 py-3 font-medium">Trạng thái</th>
+                  <th className="px-4 py-3 font-medium">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
                 {pageRows.length ? (
-                  pageRows.map((row, index) => (
-                    <tr key={index} className="border-b border-brand-red/5 last:border-0">
-                      <td className="px-4 py-4 text-brand-ink">{String(row.AccountID ?? "")}</td>
-                      <td className="px-4 py-4 text-brand-ink">{String(row.FullName ?? "")}</td>
-                      <td className="px-4 py-4 text-brand-ink">{String(row.AccountTypeName ?? "")}</td>
-                      <td className="px-4 py-4 text-brand-ink">{formatCurrency(row.Balance as number | string | null | undefined)}</td>
-                      <td className="px-4 py-4 text-brand-ink">{String(row.Status ?? "")}</td>
-                    </tr>
-                  ))
+                  pageRows.map((row, index) => {
+                    const account = row as AccountRow;
+                    return (
+                      <tr key={index} className="border-b border-brand-red/5 last:border-0">
+                        <td className="px-4 py-4 text-brand-ink">{String(account.AccountID ?? "")}</td>
+                        <td className="px-4 py-4 text-brand-ink">{String(account.FullName ?? "")}</td>
+                        <td className="px-4 py-4 text-brand-ink">{String(account.AccountTypeName ?? "")}</td>
+                        <td className="px-4 py-4 text-brand-ink">{formatCurrency(account.Balance)}</td>
+                        <td className="px-4 py-4 text-brand-ink">
+                          <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${getStatusTone(String(account.Status ?? ""))}`}>
+                            {String(account.Status ?? "")}
+                          </span>
+                        </td>
+                        <td className="px-4 py-4">
+                          <Button
+                            variant="ghost"
+                            className="inline-flex items-center gap-2 border border-brand-red/10"
+                            onClick={() => setSelectedAccount(account)}
+                          >
+                            <Eye className="h-4 w-4" />
+                            Xem
+                          </Button>
+                        </td>
+                      </tr>
+                    );
+                  })
                 ) : (
                   <tr>
-                    <td colSpan={5} className="px-4 py-10 text-center text-brand-ink/60">
+                    <td colSpan={6} className="px-4 py-10 text-center text-brand-ink/60">
                       Không tìm thấy tài khoản phù hợp.
                     </td>
                   </tr>
@@ -218,6 +353,112 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
                 </Button>
               </div>
             </form>
+          </Panel>
+        </div>
+      ) : null}
+
+      {selectedAccount ? (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-brand-ink/20 p-6 backdrop-blur-sm">
+          <Panel className="flex max-h-[88vh] w-full max-w-4xl flex-col overflow-hidden rounded-[32px] px-6 py-6">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.24em] text-brand-red">Chi tiết tài khoản</p>
+                <h3 className="mt-2 font-display text-3xl text-brand-ink">Tài khoản #{String(selectedAccount.AccountID ?? "--")}</h3>
+              </div>
+              <button
+                className="rounded-2xl border border-brand-red/10 bg-white px-3 py-3 text-brand-ink transition hover:bg-brand-cream"
+                onClick={() => {
+                  setSelectedAccount(null);
+                  setActivityError(null);
+                }}
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
+              <div className="rounded-3xl border border-brand-red/10 bg-brand-cream/55 p-5">
+                <p className="text-sm uppercase tracking-[0.22em] text-brand-red">Số dư hiện tại</p>
+                <p className="mt-3 font-display text-4xl text-brand-ink">{formatCurrency(selectedAccount.Balance)}</p>
+                <p className="mt-2 text-sm text-brand-ink/60">
+                  Loại tiền: {String(selectedAccount.Currency ?? "VND")} | Loại tài khoản: {String(selectedAccount.AccountTypeName ?? "--")}
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-brand-red/10 bg-white p-5">
+                <p className="text-sm uppercase tracking-[0.22em] text-brand-red">Tình trạng hoạt động</p>
+                <div className="mt-3">
+                  <span className={`inline-flex rounded-full px-3 py-1 text-sm font-semibold ${getStatusTone(String(selectedAccount.Status ?? ""))}`}>
+                    {String(selectedAccount.Status ?? "")}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-brand-ink/70">{getStatusDescription(String(selectedAccount.Status ?? ""))}</p>
+              </div>
+            </div>
+
+            <div className="mt-4 grid flex-1 gap-4 overflow-hidden md:grid-cols-[0.95fr_1.05fr]">
+              <div className="rounded-3xl border border-brand-red/10 bg-white p-5">
+                <h4 className="font-display text-2xl text-brand-ink">Thông tin tài khoản</h4>
+                <div className="mt-4 space-y-3 text-sm text-brand-ink/80">
+                  <div className="flex items-center justify-between gap-4 border-b border-brand-red/10 pb-3">
+                    <span>Số tài khoản nội bộ</span>
+                    <span className="font-semibold text-brand-ink">{String(selectedAccount.AccountID ?? "--")}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4 border-b border-brand-red/10 pb-3">
+                    <span>Số tài khoản hiển thị</span>
+                    <span className="font-semibold text-brand-ink">{String(selectedAccount.AccountNumber ?? "--")}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4 border-b border-brand-red/10 pb-3">
+                    <span>Chủ tài khoản</span>
+                    <span className="font-semibold text-brand-ink">{String(selectedAccount.FullName ?? "--")}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4 border-b border-brand-red/10 pb-3">
+                    <span>Chi nhánh</span>
+                    <span className="font-semibold text-brand-ink">{String(selectedAccount.BranchName ?? "--")}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span>Khả năng giao dịch</span>
+                    <span className="font-semibold text-brand-ink">{selectedAccount.Status === "Active" ? "Có thể giao dịch" : "Bị hạn chế"}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex min-h-0 flex-col rounded-3xl border border-brand-red/10 bg-white p-5">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h4 className="font-display text-2xl text-brand-ink">Hoạt động gần đây</h4>
+                    <p className="mt-1 text-sm text-brand-ink/60">5 giao dịch mới nhất của tài khoản này.</p>
+                  </div>
+                </div>
+
+                <div className="mt-4 min-h-0 flex-1 overflow-auto">
+                  {activityLoading ? (
+                    <p className="text-sm text-brand-ink/60">Đang tải lịch sử hoạt động...</p>
+                  ) : activityError ? (
+                    <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">{activityError}</p>
+                  ) : activityRows.length ? (
+                    <div className="space-y-3">
+                      {activityRows.map((transaction, index) => (
+                        <div key={index} className="rounded-2xl border border-brand-red/10 bg-brand-cream/50 p-4">
+                          <div className="flex items-start justify-between gap-4">
+                            <div>
+                              <p className="font-semibold text-brand-ink">
+                                {String(transaction.TransactionType ?? transaction.TransactionTypeName ?? "Giao dịch")}
+                              </p>
+                              <p className="mt-1 text-sm text-brand-ink/60">{formatDateTime(transaction.TransactionDate)}</p>
+                            </div>
+                            <p className="text-sm font-semibold text-brand-ink">{formatCurrency(transaction.Amount)}</p>
+                          </div>
+                          <p className="mt-2 text-sm text-brand-ink/70">{String(transaction.Description ?? "Không có nội dung giao dịch")}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-brand-ink/60">Chưa có giao dịch nào cho tài khoản này.</p>
+                  )}
+                </div>
+              </div>
+            </div>
           </Panel>
         </div>
       ) : null}

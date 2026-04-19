@@ -11,10 +11,26 @@ type CustomersPageProps = {
   onRefresh: () => Promise<void>;
 };
 
-const formFields: Array<{ name: string; label: string; type?: string; placeholder?: string }> = [
+type FormField = {
+  name: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+  options?: Array<{ label: string; value: string }>;
+};
+
+const formFields: FormField[] = [
   { name: "FullName", label: "Họ tên" },
   { name: "DateOfBirth", label: "Ngày sinh", type: "date" },
-  { name: "Gender", label: "Giới tính", placeholder: "Nam / Nữ" },
+  {
+    name: "Gender",
+    label: "Giới tính",
+    options: [
+      { label: "Nam", value: "Male" },
+      { label: "Nữ", value: "Female" },
+      { label: "Khác", value: "Other" }
+    ]
+  },
   { name: "PhoneNumber", label: "Số điện thoại" },
   { name: "Email", label: "Email", type: "email" },
   { name: "Address", label: "Địa chỉ" },
@@ -188,13 +204,28 @@ export function CustomersPage({ token, rows, onRefresh }: CustomersPageProps) {
                 {formFields.map((field) => (
                   <label key={field.name} className="block space-y-2">
                     <span className="text-sm font-medium text-brand-ink">{field.label}</span>
-                    <input
-                      type={field.type ?? "text"}
-                      className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
-                      placeholder={field.placeholder}
-                      value={formData[field.name] ?? ""}
-                      onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
-                    />
+                    {field.options ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      >
+                        <option value="">Chọn giới tính</option>
+                        {field.options.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type ?? "text"}
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        placeholder={field.placeholder}
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      />
+                    )}
                   </label>
                 ))}
               </div>

@@ -1,6 +1,13 @@
 USE BankingManagementDB;
 GO
--- View tổng hợp khách hàng - tài khoản
+
+-- ============================================================
+-- FILE: 04_views.sql
+-- Muc dich:
+-- Tao cac view tong hop phuc vu man hinh nghiep vu va dashboard.
+-- ============================================================
+
+-- View tong hop khach hang va tai khoan
 CREATE OR ALTER VIEW dbo.vw_CustomerAccountSummary
 AS
 SELECT
@@ -25,7 +32,8 @@ GROUP BY
     c.Email,
     c.[Status];
 GO
--- View chi tiết giao dịch
+
+-- View chi tiet giao dich
 CREATE OR ALTER VIEW dbo.vw_TransactionDetail
 AS
 SELECT
@@ -54,7 +62,8 @@ LEFT JOIN dbo.BANK_ACCOUNT dst
 LEFT JOIN dbo.EMPLOYEE e
     ON bt.EmployeeID = e.EmployeeID;
 GO
--- View tình trạng khoản vay
+
+-- View tong hop tinh trang khoan vay
 CREATE OR ALTER VIEW dbo.vw_LoanStatus
 AS
 SELECT
@@ -96,7 +105,8 @@ GROUP BY
     l.EndDate,
     l.[Status];
 GO
--- View hiệu suất chi nhánh
+
+-- View tong hop hieu suat chi nhanh
 CREATE OR ALTER VIEW dbo.vw_BranchPerformance
 AS
 SELECT
@@ -119,4 +129,58 @@ GROUP BY
     b.BranchCode,
     b.BranchName;
 GO
--- 
+
+-- View cac khoan vay qua han
+CREATE OR ALTER VIEW dbo.vw_OverdueLoans
+AS
+SELECT
+    l.LoanID,
+    l.LoanCode,
+    c.CustomerCode,
+    c.FullName AS CustomerName,
+    b.BranchName,
+    lt.LoanTypeName,
+    l.PrincipalAmount,
+    l.StartDate,
+    l.EndDate,
+    l.[Status],
+    dbo.fn_GetLoanRemainingPrincipal(l.LoanID) AS RemainingPrincipal
+FROM dbo.LOAN l
+INNER JOIN dbo.CUSTOMER c
+    ON l.CustomerID = c.CustomerID
+INNER JOIN dbo.BRANCH b
+    ON l.BranchID = b.BranchID
+INNER JOIN dbo.LOAN_TYPE lt
+    ON l.LoanTypeID = lt.LoanTypeID
+WHERE l.[Status] = 'Overdue';
+GO
+
+-- View hieu suat lam viec cua nhan vien
+CREATE OR ALTER VIEW dbo.vw_EmployeePerformance
+AS
+SELECT
+    e.EmployeeID,
+    e.FullName,
+    b.BranchName,
+    r.RoleName,
+    COUNT(DISTINCT bt.TransactionID) AS TotalTransactionsHandled,
+    ISNULL(SUM(bt.Amount), 0) AS TotalTransactionAmountHandled,
+    COUNT(DISTINCT l.LoanID) AS TotalLoansHandled,
+    COUNT(DISTINCT lp.LoanPaymentID) AS TotalLoanPaymentsHandled
+FROM dbo.EMPLOYEE e
+INNER JOIN dbo.BRANCH b
+    ON e.BranchID = b.BranchID
+INNER JOIN dbo.[ROLE] r
+    ON e.RoleID = r.RoleID
+LEFT JOIN dbo.BANK_TRANSACTION bt
+    ON e.EmployeeID = bt.EmployeeID
+LEFT JOIN dbo.LOAN l
+    ON e.EmployeeID = l.EmployeeID
+LEFT JOIN dbo.LOAN_PAYMENT lp
+    ON e.EmployeeID = lp.EmployeeID
+GROUP BY
+    e.EmployeeID,
+    e.FullName,
+    b.BranchName,
+    r.RoleName;
+GO
