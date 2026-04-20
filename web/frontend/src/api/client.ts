@@ -20,7 +20,13 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
 
   if (!response.ok) {
     const payload = await response.json().catch(() => ({ message: "Không thể xử lý yêu cầu" }));
-    throw new Error(payload.message ?? "Không thể xử lý yêu cầu");
+    const fieldErrors = Object.values(payload?.issues?.fieldErrors ?? {})
+      .flat()
+      .filter((value): value is string => typeof value === "string" && value.trim().length > 0);
+    const formErrors = (payload?.issues?.formErrors ?? []).filter((value: unknown): value is string => typeof value === "string" && value.trim().length > 0);
+    const detailedMessage = [...fieldErrors, ...formErrors].join(". ");
+
+    throw new Error(detailedMessage || payload.message || "Không thể xử lý yêu cầu");
   }
 
   return response.json() as Promise<T>;

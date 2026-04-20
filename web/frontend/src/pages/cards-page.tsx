@@ -12,13 +12,31 @@ type CardsPageProps = {
 };
 
 const formFields: Array<{ name: string; label: string; type?: string; placeholder?: string }> = [
-  { name: "AccountID", label: "Số tài khoản", type: "number" },
+  { name: "AccountID", label: "Số tài khoản", type: "text", placeholder: "Ví dụ: 1000000000003 hoặc ACC20260421000866" },
   { name: "ExpiryDate", label: "Ngày hết hạn", type: "date" },
   { name: "CardType", label: "Loại thẻ", placeholder: "Debit" },
   { name: "PINHash", label: "PIN / Mã hóa PIN" }
 ];
 
 const PAGE_SIZE = 7;
+const cardTypeOptions = ["Debit", "Credit", "ATM"];
+
+function formatDate(value: unknown) {
+  if (!value) {
+    return "--";
+  }
+
+  const date = new Date(String(value));
+  if (Number.isNaN(date.getTime())) {
+    return String(value);
+  }
+
+  return new Intl.DateTimeFormat("vi-VN", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  }).format(date);
+}
 
 export function CardsPage({ token, rows, onRefresh }: CardsPageProps) {
   const [query, setQuery] = useState("");
@@ -110,7 +128,7 @@ export function CardsPage({ token, rows, onRefresh }: CardsPageProps) {
               <thead className="sticky top-0 bg-white/95 backdrop-blur">
                 <tr className="border-b border-brand-red/10 text-brand-ink/60">
                   <th className="px-4 py-3 font-medium">Mã thẻ</th>
-                  <th className="px-4 py-3 font-medium">Tài khoản</th>
+                  <th className="px-4 py-3 font-medium">Số tài khoản</th>
                   <th className="px-4 py-3 font-medium">Loại thẻ</th>
                   <th className="px-4 py-3 font-medium">Trạng thái</th>
                   <th className="px-4 py-3 font-medium">Ngày hết hạn</th>
@@ -121,10 +139,10 @@ export function CardsPage({ token, rows, onRefresh }: CardsPageProps) {
                   pageRows.map((row, index) => (
                     <tr key={index} className="border-b border-brand-red/5 last:border-0">
                       <td className="px-4 py-4 text-brand-ink">{String(row.CardID ?? "")}</td>
-                      <td className="px-4 py-4 text-brand-ink">{String(row.AccountID ?? "")}</td>
+                      <td className="px-4 py-4 text-brand-ink">{String(row.AccountNumber ?? row.AccountID ?? "")}</td>
                       <td className="px-4 py-4 text-brand-ink">{String(row.CardType ?? "")}</td>
                       <td className="px-4 py-4 text-brand-ink">{String(row.Status ?? "")}</td>
-                      <td className="px-4 py-4 text-brand-ink">{String(row.ExpiryDate ?? "")}</td>
+                      <td className="px-4 py-4 text-brand-ink">{formatDate(row.ExpiryDate)}</td>
                     </tr>
                   ))
                 ) : (
@@ -186,13 +204,28 @@ export function CardsPage({ token, rows, onRefresh }: CardsPageProps) {
                 {formFields.map((field) => (
                   <label key={field.name} className="block space-y-2">
                     <span className="text-sm font-medium text-brand-ink">{field.label}</span>
-                    <input
-                      type={field.type ?? "text"}
-                      className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
-                      placeholder={field.placeholder}
-                      value={formData[field.name] ?? ""}
-                      onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
-                    />
+                    {field.name === "CardType" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      >
+                        <option value="">Chọn loại thẻ</option>
+                        {cardTypeOptions.map((cardType) => (
+                          <option key={cardType} value={cardType}>
+                            {cardType}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type ?? "text"}
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        placeholder={field.placeholder}
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      />
+                    )}
                   </label>
                 ))}
               </div>

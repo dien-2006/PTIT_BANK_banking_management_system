@@ -144,6 +144,8 @@ BEGIN
         CustomerID,
         CustomerCode,
         CustomerName,
+        AccountID,
+        AccountNumber,
         LoanTypeName,
         PrincipalAmount,
         InterestRate,

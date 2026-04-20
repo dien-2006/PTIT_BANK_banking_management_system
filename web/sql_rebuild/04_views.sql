@@ -72,6 +72,8 @@ SELECT
     c.CustomerID,
     c.CustomerCode,
     c.FullName AS CustomerName,
+    accountInfo.AccountID,
+    accountInfo.AccountNumber,
     lt.LoanTypeName,
     l.PrincipalAmount,
     l.InterestRate,
@@ -89,6 +91,18 @@ INNER JOIN dbo.CUSTOMER c
     ON l.CustomerID = c.CustomerID
 INNER JOIN dbo.LOAN_TYPE lt
     ON l.LoanTypeID = lt.LoanTypeID
+OUTER APPLY (
+    SELECT TOP 1
+        ba.AccountID,
+        ba.AccountNumber
+    FROM dbo.BANK_ACCOUNT ba
+    WHERE ba.CustomerID = c.CustomerID
+      AND ba.[Status] <> 'Closed'
+    ORDER BY
+        CASE WHEN ba.[Status] = 'Active' THEN 0 ELSE 1 END,
+        ba.OpenDate DESC,
+        ba.AccountID DESC
+) accountInfo
 LEFT JOIN dbo.LOAN_PAYMENT lp
     ON l.LoanID = lp.LoanID
 GROUP BY
@@ -97,6 +111,8 @@ GROUP BY
     c.CustomerID,
     c.CustomerCode,
     c.FullName,
+    accountInfo.AccountID,
+    accountInfo.AccountNumber,
     lt.LoanTypeName,
     l.PrincipalAmount,
     l.InterestRate,

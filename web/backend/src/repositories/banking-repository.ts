@@ -84,7 +84,7 @@ const statusUpdateSchema = z
   }));
 
 const issueCardSchema = z.object({
-  AccountID: z.coerce.number().int().positive(),
+  AccountID: z.union([z.string(), z.number()]),
   ExpiryDate: z.string().min(1),
   CardType: z.string().min(1),
   PINHash: z.string().min(1)
@@ -139,9 +139,9 @@ const historySchema = z
 
 const moneySchema = z
   .object({
-    DestinationAccountID: z.coerce.number().int().positive().optional(),
-    SourceAccountID: z.coerce.number().int().positive().optional(),
-    AccountID: z.coerce.number().int().positive().optional(),
+    DestinationAccountID: z.union([z.string(), z.number()]).optional(),
+    SourceAccountID: z.union([z.string(), z.number()]).optional(),
+    AccountID: z.union([z.string(), z.number()]).optional(),
     Amount: z.coerce.number().positive(),
     EmployeeID: z.coerce.number().int().positive().optional(),
     PerformedBy: z.coerce.number().int().positive().optional(),
@@ -152,10 +152,10 @@ const moneySchema = z
 
 const transferSchema = z
   .object({
-    SourceAccountID: z.coerce.number().int().positive().optional(),
-    DestinationAccountID: z.coerce.number().int().positive().optional(),
-    FromAccountID: z.coerce.number().int().positive().optional(),
-    ToAccountID: z.coerce.number().int().positive().optional(),
+    SourceAccountID: z.union([z.string(), z.number()]).optional(),
+    DestinationAccountID: z.union([z.string(), z.number()]).optional(),
+    FromAccountID: z.union([z.string(), z.number()]).optional(),
+    ToAccountID: z.union([z.string(), z.number()]).optional(),
     Amount: z.coerce.number().positive(),
     Fee: z.coerce.number().nonnegative().optional(),
     EmployeeID: z.coerce.number().int().positive().optional(),
@@ -164,8 +164,8 @@ const transferSchema = z
     Description: z.string().optional()
   })
   .transform((data) => ({
-    SourceAccountID: data.SourceAccountID ?? data.FromAccountID ?? 0,
-    DestinationAccountID: data.DestinationAccountID ?? data.ToAccountID ?? 0,
+    SourceAccountID: data.SourceAccountID ?? data.FromAccountID ?? null,
+    DestinationAccountID: data.DestinationAccountID ?? data.ToAccountID ?? null,
     Amount: data.Amount,
     Fee: data.Fee ?? 0,
     EmployeeID: data.EmployeeID ?? data.PerformedBy ?? null,
@@ -174,6 +174,46 @@ const transferSchema = z
   }));
 
 export class BankingRepository extends SqlRepository {
+  private normalizeAccountIdentifier(value: string | number | null | undefined) {
+    if (value == null) {
+      return null;
+    }
+
+    const normalized = String(value).trim();
+    return normalized ? normalized : null;
+  }
+
+  private async resolveAccountId(accountIdentifier: string | number | null | undefined) {
+    const normalized = this.normalizeAccountIdentifier(accountIdentifier);
+    if (!normalized) {
+      return null;
+    }
+
+    const numericValue = Number(normalized);
+    const rows = await this.executeQuery<{ AccountID: number }>(
+      `
+      SELECT TOP 1 AccountID
+      FROM dbo.BANK_ACCOUNT
+      WHERE AccountNumber = @AccountNumber
+         OR AccountID = TRY_CONVERT(INT, @AccountNumber)
+      ORDER BY CASE WHEN AccountNumber = @AccountNumber THEN 0 ELSE 1 END, AccountID
+      `,
+      [{ name: "AccountNumber", value: normalized }]
+    );
+
+    const resolvedAccountId = rows[0]?.AccountID;
+
+    if (resolvedAccountId) {
+      return resolvedAccountId;
+    }
+
+    if (Number.isInteger(numericValue) && numericValue > 0 && numericValue <= 2147483647) {
+      return numericValue;
+    }
+
+    throw new Error(`Không tìm thấy tài khoản ${normalized}`);
+  }
+
   async getDashboardOverview() {
     return this.executeQuery(
       `
@@ -270,8 +310,10 @@ export class BankingRepository extends SqlRepository {
 
   async deposit(payload: unknown) {
     const data = moneySchema.parse(payload);
+    const destinationAccountId = await this.resolveAccountId(data.DestinationAccountID ?? data.AccountID ?? null);
+
     return this.executeProcedure("sp_DepositMoney", [
-      { name: "DestinationAccountID", value: data.DestinationAccountID ?? data.AccountID ?? null },
+      { name: "DestinationAccountID", value: destinationAccountId },
       { name: "Amount", value: data.Amount },
       { name: "EmployeeID", value: data.EmployeeID ?? data.PerformedBy ?? null },
       { name: "Channel", value: data.Channel ?? "Counter" },
@@ -281,8 +323,10 @@ export class BankingRepository extends SqlRepository {
 
   async withdraw(payload: unknown) {
     const data = moneySchema.parse(payload);
+    const sourceAccountId = await this.resolveAccountId(data.SourceAccountID ?? data.AccountID ?? null);
+
     return this.executeProcedure("sp_WithdrawMoney", [
-      { name: "SourceAccountID", value: data.SourceAccountID ?? data.AccountID ?? null },
+      { name: "SourceAccountID", value: sourceAccountId },
       { name: "Amount", value: data.Amount },
       { name: "Fee", value: data.Fee ?? 0 },
       { name: "EmployeeID", value: data.EmployeeID ?? data.PerformedBy ?? null },
@@ -293,9 +337,20 @@ export class BankingRepository extends SqlRepository {
 
   async transfer(payload: unknown) {
     const data = transferSchema.parse(payload);
+    const sourceAccountId = await this.resolveAccountId(data.SourceAccountID);
+    const destinationAccountId = await this.resolveAccountId(data.DestinationAccountID);
+
     return this.executeProcedure(
       "sp_TransferMoney",
-      Object.entries(data).map(([name, value]) => ({ name, value: value ?? null }))
+      [
+        { name: "SourceAccountID", value: sourceAccountId },
+        { name: "DestinationAccountID", value: destinationAccountId },
+        { name: "Amount", value: data.Amount },
+        { name: "Fee", value: data.Fee ?? 0 },
+        { name: "EmployeeID", value: data.EmployeeID ?? null },
+        { name: "Channel", value: data.Channel ?? "Counter" },
+        { name: "Description", value: data.Description ?? null }
+      ]
     );
   }
 
@@ -303,6 +358,21 @@ export class BankingRepository extends SqlRepository {
     const data = historySchema.parse(payload);
 
     if (!data.AccountID) {
+      const filterClauses: string[] = [];
+      const inputs: Array<{ name: string; value: string }> = [];
+
+      if (data.FromDate) {
+        filterClauses.push("CAST(TransactionDate AS DATE) >= CAST(@FromDate AS DATE)");
+        inputs.push({ name: "FromDate", value: data.FromDate });
+      }
+
+      if (data.ToDate) {
+        filterClauses.push("CAST(TransactionDate AS DATE) <= CAST(@ToDate AS DATE)");
+        inputs.push({ name: "ToDate", value: data.ToDate });
+      }
+
+      const whereClause = filterClauses.length ? `WHERE ${filterClauses.join(" AND ")}` : "";
+
       return {
         recordset: await this.executeQuery(
           `
@@ -321,8 +391,11 @@ export class BankingRepository extends SqlRepository {
             [Description],
             [Status]
           FROM dbo.vw_TransactionDetail
+          ${whereClause}
           ORDER BY TransactionDate DESC, TransactionID DESC
           `
+          ,
+          inputs
         )
       };
     }
@@ -341,13 +414,15 @@ export class BankingRepository extends SqlRepository {
     return this.executeQuery(
       `
       SELECT
-        CardID,
-        AccountID,
-        CardNumber,
-        CardType,
-        [Status] AS Status,
-        ExpiryDate
-      FROM dbo.CARD
+        c.CardID,
+        c.AccountID,
+        a.AccountNumber,
+        c.CardNumber,
+        c.CardType,
+        c.[Status] AS Status,
+        c.ExpiryDate
+      FROM dbo.CARD c
+      INNER JOIN dbo.BANK_ACCOUNT a ON a.AccountID = c.AccountID
       ORDER BY CardID DESC
       `
     );
@@ -355,7 +430,14 @@ export class BankingRepository extends SqlRepository {
 
   async issueCard(payload: unknown) {
     const data = issueCardSchema.parse(payload);
-    return this.executeProcedure("sp_IssueCard", Object.entries(data).map(([name, value]) => ({ name, value: value ?? null })));
+    const accountId = await this.resolveAccountId(data.AccountID);
+
+    return this.executeProcedure("sp_IssueCard", [
+      { name: "AccountID", value: accountId },
+      { name: "ExpiryDate", value: data.ExpiryDate },
+      { name: "CardType", value: data.CardType },
+      { name: "PINHash", value: data.PINHash }
+    ]);
   }
 
   async getLoans() {

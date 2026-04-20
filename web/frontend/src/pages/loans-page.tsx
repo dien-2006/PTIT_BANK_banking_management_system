@@ -1,5 +1,5 @@
 import type { FormEvent } from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Banknote, HandCoins, Search, X } from "lucide-react";
 import { apiRequest } from "../api/client";
 import { Button } from "../components/ui/button";
@@ -19,6 +19,23 @@ type LoanAction = {
   submitLabel: string;
   icon: typeof Banknote;
   fields: Array<{ name: string; label: string; type?: string; placeholder?: string }>;
+};
+
+type LoanTypeRow = {
+  LoanTypeID: number | string;
+  LoanTypeName?: string;
+};
+
+type BranchRow = {
+  BranchID: number | string;
+  BranchCode?: string;
+  BranchName?: string;
+};
+
+type CustomerRow = {
+  CustomerID: number | string;
+  FullName?: string;
+  CustomerCode?: string;
 };
 
 const actions: LoanAction[] = [
@@ -57,12 +74,19 @@ const actions: LoanAction[] = [
 ];
 
 const PAGE_SIZE = 7;
+const paymentChannelOptions = [{ label: "Tại quầy", value: "Counter" }];
 
 export function LoansPage({ token, rows, onRefresh }: LoansPageProps) {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [activeAction, setActiveAction] = useState<LoanAction | null>(null);
   const [formData, setFormData] = useState<Record<string, string>>({});
+  const [loanTypes, setLoanTypes] = useState<LoanTypeRow[]>([]);
+  const [loanTypesLoading, setLoanTypesLoading] = useState(false);
+  const [branches, setBranches] = useState<BranchRow[]>([]);
+  const [branchesLoading, setBranchesLoading] = useState(false);
+  const [customers, setCustomers] = useState<CustomerRow[]>([]);
+  const [customersLoading, setCustomersLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -83,6 +107,80 @@ export function LoansPage({ token, rows, onRefresh }: LoansPageProps) {
 
   const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
   const pageRows = filteredRows.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  const customerOptions = useMemo(() => {
+    const customerMap = new Map<string, string>();
+
+    customers.forEach((customer) => {
+      const customerId = customer.CustomerID;
+      if (customerId == null || customerId === "") {
+        return;
+      }
+
+      const labelParts = [String(customerId), customer.FullName].filter(Boolean);
+      customerMap.set(String(customerId), labelParts.join(" - ") || `Khách hàng #${customerId}`);
+    });
+
+    rows.forEach((row) => {
+      const customerId = row.CustomerID;
+      if (customerId == null || customerId === "") {
+        return;
+      }
+
+      customerMap.set(String(customerId), `${customerId} - ${String(row.FullName ?? `Khách hàng #${customerId}`)}`);
+    });
+
+    return [...customerMap.entries()].map(([value, label]) => ({ value, label }));
+  }, [rows]);
+
+  const loanOptions = useMemo(() => {
+    return rows
+      .filter((row) => row.LoanID != null && row.LoanID !== "")
+      .map((row) => ({
+        value: String(row.LoanID),
+        label: `${String(row.LoanID)} - ${String(row.FullName ?? "--")} - ${String(row.LoanTypeName ?? "--")}`
+      }));
+  }, [rows]);
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    const loadReferenceData = async () => {
+      setLoanTypesLoading(true);
+      setBranchesLoading(true);
+      setCustomersLoading(true);
+
+      try {
+        const [loanTypeResponse, branchResponse, customerResponse] = await Promise.all([
+          apiRequest<LoanTypeRow[]>("/api/loan-types", { token }),
+          apiRequest<BranchRow[]>("/api/branches", { token }),
+          apiRequest<CustomerRow[]>("/api/customers", { token }).catch(() => [])
+        ]);
+
+        if (!isCancelled) {
+          setLoanTypes(loanTypeResponse);
+          setBranches(branchResponse);
+          setCustomers(customerResponse);
+        }
+      } catch (requestError) {
+        if (!isCancelled) {
+          setError(requestError instanceof Error ? requestError.message : "Không thể tải dữ liệu biểu mẫu");
+        }
+      } finally {
+        if (!isCancelled) {
+          setLoanTypesLoading(false);
+          setBranchesLoading(false);
+          setCustomersLoading(false);
+        }
+      }
+    };
+
+    void loadReferenceData();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [token]);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -241,13 +339,83 @@ export function LoansPage({ token, rows, onRefresh }: LoansPageProps) {
                 {activeAction.fields.map((field) => (
                   <label key={field.name} className="block space-y-2">
                     <span className="text-sm font-medium text-brand-ink">{field.label}</span>
-                    <input
-                      type={field.type ?? "text"}
-                      className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
-                      placeholder={field.placeholder}
-                      value={formData[field.name] ?? ""}
-                      onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
-                    />
+                    {field.name === "LoanTypeID" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                        disabled={loanTypesLoading}
+                      >
+                        <option value="">{loanTypesLoading ? "Đang tải loại vay..." : "Chọn loại vay"}</option>
+                        {loanTypes.map((loanType) => (
+                          <option key={String(loanType.LoanTypeID)} value={String(loanType.LoanTypeID)}>
+                            {String(loanType.LoanTypeName ?? `Loại vay #${loanType.LoanTypeID}`)}
+                          </option>
+                        ))}
+                      </select>
+                    ) : field.name === "BranchID" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                        disabled={branchesLoading}
+                      >
+                        <option value="">{branchesLoading ? "Đang tải chi nhánh..." : "Chọn chi nhánh"}</option>
+                        {branches.map((branch) => (
+                          <option key={String(branch.BranchID)} value={String(branch.BranchID)}>
+                            {String(branch.BranchCode ?? `CN${branch.BranchID}`)} - {String(branch.BranchName ?? `Chi nhánh #${branch.BranchID}`)}
+                          </option>
+                        ))}
+                      </select>
+                    ) : field.name === "PaymentChannel" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      >
+                        <option value="">Chọn kênh thanh toán</option>
+                        {paymentChannelOptions.map((channel) => (
+                          <option key={channel.value} value={channel.value}>
+                            {channel.label}
+                          </option>
+                        ))}
+                      </select>
+                    ) : field.name === "LoanID" && loanOptions.length ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      >
+                        <option value="">Chọn mã khoản vay</option>
+                        {loanOptions.map((loan) => (
+                          <option key={loan.value} value={loan.value}>
+                            {loan.label}
+                          </option>
+                        ))}
+                      </select>
+                    ) : field.name === "CustomerID" && customerOptions.length ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                        disabled={customersLoading}
+                      >
+                        <option value="">{customersLoading ? "Đang tải khách hàng..." : "Chọn khách hàng"}</option>
+                        {customerOptions.map((customer) => (
+                          <option key={customer.value} value={customer.value}>
+                            {customer.label}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type ?? "text"}
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        placeholder={field.placeholder}
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      />
+                    )}
                   </label>
                 ))}
               </div>

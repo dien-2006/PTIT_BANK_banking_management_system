@@ -32,6 +32,18 @@ type TransactionRow = {
   TransactionDate?: string;
 };
 
+type AccountTypeRow = {
+  AccountTypeID: number | string;
+  AccountTypeName?: string;
+  MinBalance?: number | string;
+};
+
+type BranchRow = {
+  BranchID: number | string;
+  BranchCode?: string;
+  BranchName?: string;
+};
+
 type FormField = {
   name: string;
   label: string;
@@ -41,13 +53,14 @@ type FormField = {
 
 const formFields: FormField[] = [
   { name: "CustomerID", label: "Mã khách hàng", type: "number" },
-  { name: "AccountTypeID", label: "Mã loại tài khoản", type: "number" },
-  { name: "BranchID", label: "Mã chi nhánh", type: "number" },
+  { name: "AccountTypeID", label: "Loại tài khoản", type: "number" },
+  { name: "BranchID", label: "Chi nhánh", type: "number" },
   { name: "InitialDeposit", label: "Số tiền nộp ban đầu (VNĐ)", type: "number" },
   { name: "Currency", label: "Đơn vị tiền", placeholder: "VND" }
 ];
 
 const PAGE_SIZE = 7;
+const currencyOptions = ["VND", "USD", "EUR"];
 
 function getStatusTone(status: string) {
   switch (status) {
@@ -101,7 +114,11 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
   const [activityRows, setActivityRows] = useState<TransactionRow[]>([]);
   const [activityLoading, setActivityLoading] = useState(false);
   const [activityError, setActivityError] = useState<string | null>(null);
-  const [formData, setFormData] = useState<Record<string, string>>({});
+  const [accountTypes, setAccountTypes] = useState<AccountTypeRow[]>([]);
+  const [accountTypesLoading, setAccountTypesLoading] = useState(false);
+  const [branches, setBranches] = useState<BranchRow[]>([]);
+  const [branchesLoading, setBranchesLoading] = useState(false);
+  const [formData, setFormData] = useState<Record<string, string>>({ Currency: "VND" });
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -122,6 +139,42 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
 
   const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
   const pageRows = filteredRows.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    const loadReferenceData = async () => {
+      setAccountTypesLoading(true);
+      setBranchesLoading(true);
+
+      try {
+        const [accountTypeResponse, branchResponse] = await Promise.all([
+          apiRequest<AccountTypeRow[]>("/api/account-types", { token }),
+          apiRequest<BranchRow[]>("/api/branches", { token })
+        ]);
+
+        if (!isCancelled) {
+          setAccountTypes(accountTypeResponse);
+          setBranches(branchResponse);
+        }
+      } catch (requestError) {
+        if (!isCancelled) {
+          setError(requestError instanceof Error ? requestError.message : "Không thể tải dữ liệu biểu mẫu");
+        }
+      } finally {
+        if (!isCancelled) {
+          setAccountTypesLoading(false);
+          setBranchesLoading(false);
+        }
+      }
+    };
+
+    void loadReferenceData();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [token]);
 
   useEffect(() => {
     const accountId = selectedAccount?.AccountID;
@@ -242,7 +295,7 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
                     const account = row as AccountRow;
                     return (
                       <tr key={index} className="border-b border-brand-red/5 last:border-0">
-                        <td className="px-4 py-4 text-brand-ink">{String(account.AccountID ?? "")}</td>
+                        <td className="px-4 py-4 text-brand-ink">{String(account.AccountNumber ?? account.AccountID ?? "")}</td>
                         <td className="px-4 py-4 text-brand-ink">{String(account.FullName ?? "")}</td>
                         <td className="px-4 py-4 text-brand-ink">{String(account.AccountTypeName ?? "")}</td>
                         <td className="px-4 py-4 text-brand-ink">{formatCurrency(account.Balance)}</td>
@@ -323,13 +376,56 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
                 {formFields.map((field) => (
                   <label key={field.name} className="block space-y-2">
                     <span className="text-sm font-medium text-brand-ink">{field.label}</span>
-                    <input
-                      type={field.type ?? "text"}
-                      className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
-                      placeholder={field.placeholder}
-                      value={formData[field.name] ?? ""}
-                      onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
-                    />
+                    {field.name === "AccountTypeID" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                        disabled={accountTypesLoading}
+                      >
+                        <option value="">{accountTypesLoading ? "Đang tải loại tài khoản..." : "Chọn loại tài khoản"}</option>
+                        {accountTypes.map((accountType) => (
+                          <option key={String(accountType.AccountTypeID)} value={String(accountType.AccountTypeID)}>
+                            {String(accountType.AccountTypeName ?? `Loại #${accountType.AccountTypeID}`)}
+                            {accountType.MinBalance != null ? ` | Số dư tối thiểu: ${formatCurrency(accountType.MinBalance)}` : ""}
+                          </option>
+                        ))}
+                      </select>
+                    ) : field.name === "BranchID" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                        disabled={branchesLoading}
+                      >
+                        <option value="">{branchesLoading ? "Đang tải chi nhánh..." : "Chọn chi nhánh"}</option>
+                        {branches.map((branch) => (
+                          <option key={String(branch.BranchID)} value={String(branch.BranchID)}>
+                            {String(branch.BranchCode ?? `CN${branch.BranchID}`)} - {String(branch.BranchName ?? `Chi nhánh #${branch.BranchID}`)}
+                          </option>
+                        ))}
+                      </select>
+                    ) : field.name === "Currency" ? (
+                      <select
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        value={formData[field.name] ?? "VND"}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      >
+                        {currencyOptions.map((currency) => (
+                          <option key={currency} value={currency}>
+                            {currency}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type ?? "text"}
+                        className="w-full rounded-2xl border border-brand-red/10 bg-brand-cream px-4 py-3 outline-none"
+                        placeholder={field.placeholder}
+                        value={formData[field.name] ?? ""}
+                        onChange={(event) => setFormData((current) => ({ ...current, [field.name]: event.target.value }))}
+                      />
+                    )}
                   </label>
                 ))}
               </div>
@@ -344,6 +440,7 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
                   onClick={() => {
                     setIsCreateOpen(false);
                     setError(null);
+                    setFormData({ Currency: "VND" });
                   }}
                 >
                   Hủy
@@ -363,7 +460,7 @@ export function AccountsPage({ token, rows, onRefresh }: AccountsPageProps) {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm uppercase tracking-[0.24em] text-brand-red">Chi tiết tài khoản</p>
-                <h3 className="mt-2 font-display text-3xl text-brand-ink">Tài khoản #{String(selectedAccount.AccountID ?? "--")}</h3>
+                <h3 className="mt-2 font-display text-3xl text-brand-ink">Tài khoản {String(selectedAccount.AccountNumber ?? selectedAccount.AccountID ?? "--")}</h3>
               </div>
               <button
                 className="rounded-2xl border border-brand-red/10 bg-white px-3 py-3 text-brand-ink transition hover:bg-brand-cream"

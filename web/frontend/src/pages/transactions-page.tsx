@@ -29,7 +29,7 @@ const actions: TransactionAction[] = [
     submitLabel: "Xác nhận nạp tiền",
     icon: ArrowUpRight,
     fields: [
-      { name: "AccountID", label: "Số tài khoản", type: "number" },
+      { name: "AccountID", label: "Số tài khoản", type: "text", placeholder: "Ví dụ: ACC20260421000866" },
       { name: "Amount", label: "Số tiền (VNĐ)", type: "number" },
       { name: "Description", label: "Nội dung" }
     ]
@@ -41,7 +41,7 @@ const actions: TransactionAction[] = [
     submitLabel: "Xác nhận rút tiền",
     icon: ArrowDownLeft,
     fields: [
-      { name: "AccountID", label: "Số tài khoản", type: "number" },
+      { name: "AccountID", label: "Số tài khoản", type: "text", placeholder: "Ví dụ: ACC20260421000866" },
       { name: "Amount", label: "Số tiền (VNĐ)", type: "number" },
       { name: "Description", label: "Nội dung" }
     ]
@@ -53,8 +53,8 @@ const actions: TransactionAction[] = [
     submitLabel: "Xác nhận chuyển khoản",
     icon: ArrowLeftRight,
     fields: [
-      { name: "FromAccountID", label: "TK nguồn", type: "number" },
-      { name: "ToAccountID", label: "TK đích", type: "number" },
+      { name: "FromAccountID", label: "TK nguồn", type: "text", placeholder: "Ví dụ: 1000000000003" },
+      { name: "ToAccountID", label: "TK đích", type: "text", placeholder: "Ví dụ: ACC20260421000866" },
       { name: "Amount", label: "Số tiền (VNĐ)", type: "number" },
       { name: "Description", label: "Nội dung" }
     ]
@@ -62,6 +62,40 @@ const actions: TransactionAction[] = [
 ];
 
 const PAGE_SIZE = 7;
+
+function getTransactionAccountLabel(row: Record<string, unknown>) {
+  const sourceAccountNumber = row.SourceAccountNumber;
+  const destinationAccountNumber = row.DestinationAccountNumber;
+  const sourceAccountId = row.SourceAccountID;
+  const destinationAccountId = row.DestinationAccountID;
+  const transactionType = String(row.TransactionType ?? "").toLowerCase();
+  const sourceLabel =
+    sourceAccountNumber != null && sourceAccountNumber !== "" ? String(sourceAccountNumber) : sourceAccountId != null && sourceAccountId !== "" ? String(sourceAccountId) : "";
+  const destinationLabel =
+    destinationAccountNumber != null && destinationAccountNumber !== ""
+      ? String(destinationAccountNumber)
+      : destinationAccountId != null && destinationAccountId !== ""
+        ? String(destinationAccountId)
+        : "";
+
+  if (transactionType === "transfer" && sourceLabel && destinationLabel) {
+    return `${sourceLabel} -> ${destinationLabel}`;
+  }
+
+  if (sourceLabel) {
+    return sourceLabel;
+  }
+
+  if (destinationLabel) {
+    return destinationLabel;
+  }
+
+  if (row.AccountID != null && row.AccountID !== "") {
+    return String(row.AccountID);
+  }
+
+  return "--";
+}
 
 export function TransactionsPage({ token, rows, onRefresh }: TransactionsPageProps) {
   const [query, setQuery] = useState("");
@@ -78,11 +112,14 @@ export function TransactionsPage({ token, rows, onRefresh }: TransactionsPagePro
     }
 
     return rows.filter((row) =>
-      ["TransactionID", "AccountID", "TransactionType", "Description"].some((key) =>
-        String(row[key] ?? "")
-          .toLowerCase()
-          .includes(normalized)
-      )
+      [
+        String(row.TransactionID ?? ""),
+        String(row.AccountID ?? ""),
+        String(row.SourceAccountID ?? ""),
+        String(row.DestinationAccountID ?? ""),
+        String(row.TransactionType ?? ""),
+        String(row.Description ?? "")
+      ].some((value) => value.toLowerCase().includes(normalized))
     );
   }, [query, rows]);
 
@@ -181,7 +218,7 @@ export function TransactionsPage({ token, rows, onRefresh }: TransactionsPagePro
                   pageRows.map((row, index) => (
                     <tr key={index} className="border-b border-brand-red/5 last:border-0">
                       <td className="px-4 py-4 text-brand-ink">{String(row.TransactionID ?? "")}</td>
-                      <td className="px-4 py-4 text-brand-ink">{String(row.AccountID ?? "")}</td>
+                      <td className="px-4 py-4 text-brand-ink">{getTransactionAccountLabel(row)}</td>
                       <td className="px-4 py-4 text-brand-ink">{String(row.TransactionType ?? "")}</td>
                       <td className="px-4 py-4 text-brand-ink">{formatCurrency(row.Amount as number | string | null | undefined)}</td>
                       <td className="px-4 py-4 text-brand-ink">{String(row.Description ?? "")}</td>

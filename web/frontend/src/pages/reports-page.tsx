@@ -66,7 +66,7 @@ function Bars({
 }) {
   if (!rows.length) {
     return (
-      <div className="flex h-[220px] items-center justify-center rounded-[24px] border border-dashed border-brand-red/15 text-sm text-brand-ink/45">
+      <div className="flex h-[190px] items-center justify-center rounded-[24px] border border-dashed border-brand-red/15 text-sm text-brand-ink/45">
         {emptyText}
       </div>
     );
@@ -75,22 +75,22 @@ function Bars({
   const maxValue = Math.max(...rows.map((row) => row[valueKey]), 1);
 
   return (
-    <div className="h-[220px] overflow-x-auto rounded-[24px] bg-[linear-gradient(180deg,rgba(165,29,45,0.04),rgba(214,165,65,0.12))] px-5 py-4">
-      <div className="flex h-full min-w-fit items-end justify-center gap-4">
+    <div className="h-[190px] overflow-x-auto rounded-[24px] bg-[linear-gradient(180deg,rgba(165,29,45,0.04),rgba(214,165,65,0.12))] px-4 py-3">
+      <div className="flex h-full min-w-fit items-end justify-center gap-3">
         {rows.map((row) => (
-          <div key={row.label} className="flex w-20 shrink-0 flex-col items-center justify-end">
-            <p className="mb-2 text-center text-[11px] font-semibold text-brand-ink/70">
+          <div key={row.label} className="flex w-16 shrink-0 flex-col items-center justify-end">
+            <p className="mb-1.5 text-center text-[10px] font-semibold text-brand-ink/70">
               {valueKey === "amount"
                 ? Intl.NumberFormat("vi-VN", { notation: "compact" }).format(row.amount)
                 : Intl.NumberFormat("vi-VN").format(row.count)}
             </p>
-            <div className="flex h-[130px] w-full items-end rounded-[18px] bg-white/50 px-1.5 pb-1.5">
+            <div className="flex h-[112px] w-full items-end rounded-[16px] bg-white/50 px-1.5 pb-1.5">
               <div
-                className="w-full rounded-[14px] bg-[linear-gradient(180deg,#a51d2d_0%,#be3f39_55%,#d6a541_100%)]"
+                className="w-full rounded-[12px] bg-[linear-gradient(180deg,#a51d2d_0%,#be3f39_55%,#d6a541_100%)]"
                 style={{ height: `${Math.max((row[valueKey] / maxValue) * 100, 10)}%` }}
               />
             </div>
-            <p className="mt-2 text-center text-[11px] text-brand-ink/55">{row.label}</p>
+            <p className="mt-1.5 text-center text-[10px] leading-3 text-brand-ink/55">{row.label}</p>
           </div>
         ))}
       </div>
@@ -111,7 +111,7 @@ function RankedList({
 }) {
   if (!rows.length) {
     return (
-      <div className="flex h-[180px] items-center justify-center rounded-[24px] border border-dashed border-brand-red/15 text-sm text-brand-ink/45">
+      <div className="flex h-[160px] items-center justify-center rounded-[24px] border border-dashed border-brand-red/15 text-sm text-brand-ink/45">
         {emptyText}
       </div>
     );
@@ -122,7 +122,7 @@ function RankedList({
   const totalValue = displayRows.reduce((sum, row) => sum + row[valueKey], 0);
 
   return (
-    <div className="space-y-2 rounded-[24px] bg-[linear-gradient(180deg,rgba(165,29,45,0.04),rgba(214,165,65,0.10))] px-3 py-2.5">
+    <div className="space-y-0.5 rounded-[20px] bg-[linear-gradient(180deg,rgba(165,29,45,0.04),rgba(214,165,65,0.10))] px-2 py-1.5">
       {displayRows.map((row) => {
         const percent = (row[valueKey] / maxValue) * 100;
         const share = totalValue > 0 ? (row[valueKey] / totalValue) * 100 : 0;
@@ -132,15 +132,15 @@ function RankedList({
             : `${Intl.NumberFormat("vi-VN").format(row.count)} giao dịch`;
 
         return (
-          <div key={row.label} className="space-y-1 rounded-2xl bg-white/55 px-2.5 py-2">
+          <div key={row.label} className="space-y-0.5 rounded-[16px] bg-white/55 px-2 py-0.5">
             <div className="flex items-center justify-between gap-3">
-              <p className="min-w-0 truncate text-[13px] font-semibold leading-4 text-brand-ink">{row.label}</p>
+              <p className="min-w-0 truncate text-[10px] font-semibold leading-3 text-brand-ink">{row.label}</p>
               <div className="shrink-0 text-right">
-                <p className="text-[13px] leading-4 text-brand-ink/70">{valueText}</p>
-                <p className="text-[10px] leading-3 text-brand-ink/45">{share.toFixed(1)}%</p>
+                <p className="text-[10px] leading-3 text-brand-ink/70">{valueText}</p>
+                <p className="text-[8px] leading-3 text-brand-ink/45">{share.toFixed(1)}%</p>
               </div>
             </div>
-            <div className="h-3 overflow-hidden rounded-full bg-[#ead7ce] shadow-[inset_0_0_0_1px_rgba(165,29,45,0.10)]">
+            <div className="h-1.5 overflow-hidden rounded-full bg-[#ead7ce] shadow-[inset_0_0_0_1px_rgba(165,29,45,0.10)]">
               <div
                 className="h-full rounded-full bg-[linear-gradient(90deg,#a51d2d_0%,#c95e2e_58%,#d6a541_100%)]"
                 style={{ width: `${Math.max(percent, 6)}%` }}
@@ -259,7 +259,7 @@ export function ReportsPage({ token, rows, onRefresh }: ReportsPageProps) {
               </Panel>
             </div>
 
-            <Panel className="flex min-h-0 flex-col rounded-[26px] px-5 py-4">
+            <Panel className="flex min-h-0 flex-col rounded-[26px] px-5 py-3">
               <h3 className="font-display text-[1.6rem] leading-tight text-brand-ink">Giao dịch theo tháng</h3>
               <p className="mt-1 text-sm leading-6 text-brand-ink/55">
                 Theo dõi nhịp phát sinh giao dịch theo từng tháng để nhìn xu hướng vận hành.
@@ -271,23 +271,23 @@ export function ReportsPage({ token, rows, onRefresh }: ReportsPageProps) {
           </div>
 
           <div className="grid min-h-0 gap-3">
-            <Panel className="flex min-h-0 flex-col rounded-[26px] px-5 py-4">
+            <Panel className="flex min-h-0 flex-col rounded-[26px] px-4 py-2">
               <h3 className="font-display text-[1.4rem] leading-tight text-brand-ink">Cơ cấu theo loại giao dịch</h3>
-              <p className="mt-1 text-[13px] leading-5 text-brand-ink/55">
+              <p className="mt-0.5 text-[12px] leading-4 text-brand-ink/55">
                 Phân loại giao dịch chính để nhìn nhanh cấu trúc nghiệp vụ.
               </p>
-              <div className="mt-2.5 h-[170px] overflow-hidden">
-                <RankedList rows={typeRows} valueKey="count" emptyText="Chưa có dữ liệu theo loại giao dịch." maxItems={2} />
+              <div className="mt-1">
+                <RankedList rows={typeRows} valueKey="count" emptyText="Chưa có dữ liệu theo loại giao dịch." maxItems={4} />
               </div>
             </Panel>
 
-            <Panel className="flex min-h-0 flex-col rounded-[26px] px-5 py-4">
+            <Panel className="flex min-h-0 flex-col rounded-[26px] px-4 py-2">
               <h3 className="font-display text-[1.4rem] leading-tight text-brand-ink">Cơ cấu theo kênh</h3>
-              <p className="mt-1 text-[13px] leading-5 text-brand-ink/55">
+              <p className="mt-0.5 text-[12px] leading-4 text-brand-ink/55">
                 Theo dõi các kênh giao dịch đang có giá trị phát sinh lớn nhất.
               </p>
-              <div className="mt-2.5 h-[170px] overflow-hidden">
-                <RankedList rows={channelRows} valueKey="amount" emptyText="Chưa có dữ liệu theo kênh giao dịch." maxItems={2} />
+              <div className="mt-1">
+                <RankedList rows={channelRows} valueKey="amount" emptyText="Chưa có dữ liệu theo kênh giao dịch." maxItems={4} />
               </div>
             </Panel>
           </div>
